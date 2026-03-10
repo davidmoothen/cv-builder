@@ -1,5 +1,5 @@
-import { EditorLayout } from "@/core/editor";
+import { LandingPage } from "@/core/landing";
 
 export default function Home() {
-  return <EditorLayout />;
+  return <LandingPage />;
 }
