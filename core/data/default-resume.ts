@@ -3,6 +3,7 @@ import type { Resume } from "../resume/resume.types";
 export const defaultResume: Resume = {
   title: "Lead Developer Full Stack · Lead Tech · Builder SaaS",
   contact: {
+    avatar: "",
     lastname: "Doe",
     firstname: "Jane",
     phone: "+33 6 00 00 00 00",

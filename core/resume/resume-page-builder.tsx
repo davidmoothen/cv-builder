@@ -132,7 +132,7 @@ function packBlocks(
 function SidebarContent({ resume }: { resume: Resume }) {
   return (
     <>
-      <ResumeAvatar avatar="/images/avatar.jpg" />
+      <ResumeAvatar avatar={resume.contact.avatar} />
       <ResumeContact contact={resume.contact} />
       <ResumeSeparator />
       <ResumeFormation formations={resume.formations} />

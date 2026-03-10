@@ -9,6 +9,7 @@ interface ResumeStore {
   resume: Resume;
   updateResume: (resume: Resume) => void;
   resetResume: () => void;
+  patchResume: (patch: Partial<Resume>) => void;
 }
 
 export const useResumeStore = create<ResumeStore>()(
@@ -17,6 +18,7 @@ export const useResumeStore = create<ResumeStore>()(
       resume: defaultResume,
       updateResume: (resume) => set({ resume }),
       resetResume: () => set({ resume: defaultResume }),
+      patchResume: (patch) => set(state => ({ resume: { ...state.resume, ...patch } })),
     }),
     {
       name: "cv-resume",

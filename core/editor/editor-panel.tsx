@@ -1,32 +1,51 @@
-const SECTIONS = [
-  { id: "identity", label: "Identité" },
-  { id: "bio", label: "Bio" },
-  { id: "experiences", label: "Expériences" },
-  { id: "skills", label: "Compétences" },
-  { id: "languages", label: "Langues" },
-  { id: "projects", label: "Projets" },
-  { id: "formation", label: "Formation" },
-] as const;
+"use client"
+import { useState } from "react"
+import { RotateCcwIcon } from "lucide-react"
+import { useResumeStore } from "@/core/resume"
+import { FormIdentity } from "./components/form-identity"
+import { FormBio } from "./components/form-bio"
+import { FormFormation } from "./components/form-formation"
+import { FormSkills } from "./components/form-skills"
+import { FormLanguages } from "./components/form-languages"
+import { FormExperiences } from "./components/form-experiences"
+import { FormProjects } from "./components/form-projects"
 
 export function EditorPanel() {
+  const resetResume = useResumeStore(s => s.resetResume)
+  const [resetKey, setResetKey] = useState(0)
+
+  const handleReset = () => {
+    resetResume()
+    setResetKey(k => k + 1)
+  }
+
   return (
-    <div className="flex flex-col divide-y divide-gray-100">
-      <div className="px-5 py-4 bg-gray-50 border-b border-gray-200">
-        <p className="text-xs font-semibold uppercase tracking-widest text-gray-500">
-          Éditer le CV
-        </p>
+    <div className="flex flex-col min-h-full">
+      {/* Forms — remount on reset via key */}
+      <div key={resetKey} className="flex-1">
+        <FormIdentity />
+        <FormBio />
+        <FormFormation />
+        <FormSkills />
+        <FormLanguages />
+        <FormExperiences />
+        <FormProjects />
       </div>
 
-      {SECTIONS.map((section) => (
-        <div key={section.id} className="px-5 py-5">
-          <div className="flex items-center justify-between mb-3">
-            <h3 className="text-sm font-semibold text-gray-700">{section.label}</h3>
-          </div>
-          <div className="h-16 rounded-lg bg-gray-50 border border-dashed border-gray-200 flex items-center justify-center">
-            <span className="text-xs text-gray-400">Formulaire à venir</span>
-          </div>
-        </div>
-      ))}
+      {/* Reset button */}
+      <div className="px-5 py-5 border-t border-gray-100 sticky bottom-0 bg-white">
+        <button
+          type="button"
+          onClick={handleReset}
+          className="w-full flex items-center justify-center gap-2
+                     text-sm text-gray-500 hover:text-red-500
+                     border border-gray-200 hover:border-red-200
+                     rounded-lg py-2.5 transition-colors"
+        >
+          <RotateCcwIcon className="w-3.5 h-3.5" />
+          Réinitialiser le CV
+        </button>
+      </div>
     </div>
-  );
+  )
 }

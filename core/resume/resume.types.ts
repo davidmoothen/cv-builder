@@ -5,6 +5,7 @@ export interface ResumeContact {
   email: string;
   location: string;
   website: string;
+  avatar?: string;
 }
 
 export interface ResumeClient {
