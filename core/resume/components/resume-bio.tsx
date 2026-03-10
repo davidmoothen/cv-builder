@@ -6,7 +6,7 @@ interface ResumeBioProps {
 
 export function ResumeBio({ bio }: ResumeBioProps) {
   return (
-    <section className="grid gap-2">
+    <section className="grid gap-2 break-inside-avoid">
       {bio.sentences.map((sentence, index) => (
         <p key={`bio-${index}`}>{sentence}</p>
       ))}

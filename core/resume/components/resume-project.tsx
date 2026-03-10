@@ -6,7 +6,7 @@ interface ResumeProjectProps {
 
 export function ResumeProjectItem({ project }: ResumeProjectProps) {
   return (
-    <div className="grid gap-2 mb-3">
+    <div className="grid gap-2 mb-3 break-inside-avoid">
       <div>
         <span className="font-bold">{project.name}</span>{" "}
         <span className="text-black/50">— {project.status}</span>

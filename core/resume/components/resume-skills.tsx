@@ -7,7 +7,7 @@ interface ResumeSkillsProps {
 
 export function ResumeSkills({ skills }: ResumeSkillsProps) {
   return (
-    <section>
+    <section className="break-inside-avoid">
       <ResumeSubtitle title="Skills" />
       {skills.map((skill, index) => (
         <div key={`skill-${index}`}>

@@ -7,7 +7,7 @@ interface ResumeExperienceProps {
 
 export function ResumeExperienceItem({ experience }: ResumeExperienceProps) {
   return (
-    <div className="grid gap-2 mb-4">
+    <div className="grid gap-2 mb-4 break-inside-avoid">
       <div>
         <div>
           <span className="font-bold">{experience.job}</span>{" "}

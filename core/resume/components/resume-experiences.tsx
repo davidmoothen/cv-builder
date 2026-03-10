@@ -8,7 +8,7 @@ interface ResumeExperiencesProps {
 
 export function ResumeExperiences({ experiences }: ResumeExperiencesProps) {
   return (
-    <section>
+    <section className="break-inside-avoid">
       <ResumeSubtitle title="Expériences" />
       {experiences.map((experience, index) => (
         <ResumeExperienceItem key={`experience-${index}`} experience={experience} />

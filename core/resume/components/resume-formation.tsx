@@ -7,7 +7,7 @@ interface ResumeFormationProps {
 
 export function ResumeFormation({ formations }: ResumeFormationProps) {
   return (
-    <section>
+    <section className="break-inside-avoid">
       <ResumeSubtitle title="Formation" />
       {formations.map((formation) => (
         <div key={`formation-${formation.date}`}>

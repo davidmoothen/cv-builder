@@ -16,9 +16,9 @@ interface ResumeDocumentProps {
 
 export function ResumeDocument({ resume }: ResumeDocumentProps) {
   return (
-    <article className="font-sans text-xs mx-auto lg:w-[210mm] lg:h-[297mm] print:w-[210mm] print:h-[297mm] bg-white shadow-xl grid lg:grid-cols-[260px_1fr] print:grid-cols-[260px_1fr] items-start">
+    <article className="resume-document font-sans text-xs w-[210mm] bg-white grid grid-cols-[260px_1fr] items-start">
       {/* LEFT COLUMN */}
-      <aside className="bg-black/15 min-h-full px-8 py-4 flex flex-col">
+      <aside className="resume-sidebar bg-black/15 px-8 py-4 flex flex-col min-h-[1123px]">
         <ResumeAvatar avatar="/images/avatar.jpg" />
         <ResumeContact contact={resume.contact} />
         <ResumeSeparator />
@@ -30,7 +30,7 @@ export function ResumeDocument({ resume }: ResumeDocumentProps) {
       </aside>
 
       {/* RIGHT COLUMN */}
-      <main className="px-8 grid">
+      <main className="resume-main px-8 grid">
         <ResumeHeader contact={resume.contact} title={resume.title} />
         <ResumeBio bio={resume.bio} />
         <ResumeSeparator />

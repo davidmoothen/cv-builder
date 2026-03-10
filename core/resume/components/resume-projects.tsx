@@ -8,7 +8,7 @@ interface ResumeProjectsProps {
 
 export function ResumeProjects({ projects }: ResumeProjectsProps) {
   return (
-    <section>
+    <section className="break-inside-avoid">
       <ResumeSubtitle title="Projets personnels" />
       {projects.map((project, index) => (
         <ResumeProjectItem key={`project-${index}`} project={project} />

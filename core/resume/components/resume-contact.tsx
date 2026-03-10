@@ -8,7 +8,7 @@ interface ResumeContactProps {
 
 export function ResumeContact({ contact }: ResumeContactProps) {
   return (
-    <section>
+    <section className="break-inside-avoid">
       <ResumeSubtitle title="Contact" />
       <div className="grid gap-1">
         <div className="grid gap-1 grid-cols-[20px_1fr] items-center">

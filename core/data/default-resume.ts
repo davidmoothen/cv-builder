@@ -55,6 +55,64 @@ export const defaultResume: Resume = {
         ],
       },
     },
+    {
+      job: "Développeur Frontend",
+      company: "StartupXYZ",
+      date: "2015 – 2017",
+      current: false,
+      description: "Intégration d'interfaces React sur une application de gestion de projet SaaS.",
+      achievements: {
+        title: "Réalisations",
+        items: [
+          "Migration Angular → React sur 3 mois",
+          "Mise en place d'un design system interne",
+          "Amélioration du score Lighthouse de 45 à 92",
+        ],
+      },
+    },
+    {
+      job: "Développeur Full Stack",
+      company: "Agence Digitale Pixel",
+      date: "2013 – 2015",
+      current: false,
+      description: "Conception et développement de sites web et applications sur mesure pour des clients PME.",
+      achievements: {
+        title: "Impact",
+        items: [
+          "15+ projets livrés en autonomie",
+          "Stack PHP / Symfony + jQuery",
+          "Intégration de passerelles de paiement (PayPal, Stripe)",
+        ],
+      },
+    },
+    {
+      job: "Développeur Web Junior",
+      company: "Freelance",
+      date: "2011 – 2013",
+      current: false,
+      description: "Premiers projets en freelance : sites vitrine, e-commerce et applications métier.",
+      achievements: {
+        title: "Réalisations",
+        items: [
+          "Développement de boutiques PrestaShop",
+          "Création d'une application de suivi RH pour une TPE",
+        ],
+      },
+    },
+    {
+      job: "Stage Développeur",
+      company: "Tech Innovations",
+      date: "2010 – 2011",
+      current: false,
+      description: "Stage de fin d'études au sein d'une startup spécialisée en IA appliquée au recrutement.",
+      achievements: {
+        title: "Missions",
+        items: [
+          "Développement d'un module de parsing de CV (Python / NLTK)",
+          "Contribution au pipeline de traitement NLP",
+        ],
+      },
+    },
   ],
   projects: [
     {

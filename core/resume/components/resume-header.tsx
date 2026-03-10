@@ -8,7 +8,7 @@ interface ResumeHeaderProps {
 
 export function ResumeHeader({ contact, title }: ResumeHeaderProps) {
   return (
-    <header className="bg-black/80 text-white -mx-8 px-8 py-8 flex items-center justify-center mb-8">
+    <header className="bg-black/80 text-white -mx-8 px-8 py-8 flex items-center justify-center mb-8 break-inside-avoid break-after-avoid">
       <div className="text-center grid gap-4">
         <h1 className="text-4xl uppercase font-raleway font-light tracking-widest">
           {contact.firstname}

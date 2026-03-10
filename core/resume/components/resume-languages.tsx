@@ -7,7 +7,7 @@ interface ResumeLanguagesProps {
 
 export function ResumeLanguages({ languages }: ResumeLanguagesProps) {
   return (
-    <section>
+    <section className="break-inside-avoid">
       <ResumeSubtitle title="Langues" />
       <ul className="list-none list-inside">
         {languages.map((language, index) => (
