@@ -1,9 +1,5 @@
-import { ResumeView } from "@/core/resume";
+import { EditorLayout } from "@/core/editor";
 
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-gray-200 print:bg-white overflow-x-auto">
-      <ResumeView />
-    </main>
-  );
+  return <EditorLayout />;
 }
