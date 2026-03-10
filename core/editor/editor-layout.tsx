@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ChevronRightIcon } from "lucide-react";
 import { ResumeView } from "@/core/resume";
+import { Footer } from "@/core/components/footer";
 import { EditorNavbar } from "./editor-navbar";
 import { EditorPanel } from "./editor-panel";
 
@@ -70,6 +71,11 @@ export function EditorLayout() {
         >
           <EditorPanel />
         </div>
+      </div>
+
+      {/* ── Footer: always visible, hidden at print ─────────────────────── */}
+      <div className="print:hidden">
+        <Footer />
       </div>
 
       {/* ── Toggle "languette": hidden at print ─────────────────────────── */}

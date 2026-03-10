@@ -6,6 +6,7 @@ export interface ResumeContact {
   location: string;
   website: string;
   avatar?: string;
+  birthdate?: string;
 }
 
 export interface ResumeClient {

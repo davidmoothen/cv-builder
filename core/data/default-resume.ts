@@ -10,6 +10,7 @@ export const defaultResume: Resume = {
     email: "jane.doe@example.com",
     location: "Paris · Full remote",
     website: "janedoe.dev",
+    birthdate: "",
   },
   bio: {
     sentences: [

@@ -13,6 +13,7 @@ type IdentityFormData = {
   location: string
   website: string
   avatar: string
+  birthdate: string
 }
 
 export function FormIdentity() {
@@ -29,6 +30,7 @@ export function FormIdentity() {
         location: r.contact.location,
         website: r.contact.website,
         avatar: r.contact.avatar ?? "",
+        birthdate: r.contact.birthdate ?? "",
       }
     })(),
     mode: "onChange",
@@ -49,6 +51,7 @@ export function FormIdentity() {
           location: v.location,
           website: v.website,
           avatar: v.avatar,
+          birthdate: v.birthdate,
         },
       })
     })
@@ -84,6 +87,9 @@ export function FormIdentity() {
         </Field>
         <Field label="Photo de profil (URL)">
           <input className={inputCls} placeholder="https://..." {...register("avatar")} />
+        </Field>
+        <Field label="Date de naissance">
+          <input className={inputCls} type="date" {...register("birthdate")} />
         </Field>
       </SectionBody>
     </>

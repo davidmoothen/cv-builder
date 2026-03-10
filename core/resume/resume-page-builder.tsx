@@ -29,6 +29,29 @@ const FIRST_PAGE_CONTENT_HEIGHT = PAGE_HEIGHT - PADDING_BOTTOM;
 const OTHER_PAGE_CONTENT_HEIGHT = PAGE_HEIGHT - PADDING_TOP - PADDING_BOTTOM;
 
 // ---------------------------------------------------------------------------
+// Sorting helpers (preview only — store data is never mutated)
+// ---------------------------------------------------------------------------
+
+/** Extracts the first 4-digit year from a free-form date string. */
+function extractStartYear(date: string): number {
+  const match = date.match(/\d{4}/);
+  return match ? parseInt(match[0], 10) : 0;
+}
+
+/** Sorts experiences: current jobs first, then by start year descending. */
+function sortExperiences<T extends { current: boolean; date: string }>(items: T[]): T[] {
+  return [...items].sort((a, b) => {
+    if (a.current !== b.current) return a.current ? -1 : 1;
+    return extractStartYear(b.date) - extractStartYear(a.date);
+  });
+}
+
+/** Sorts formations by year descending. */
+function sortFormations<T extends { date: string }>(items: T[]): T[] {
+  return [...items].sort((a, b) => extractStartYear(b.date) - extractStartYear(a.date));
+}
+
+// ---------------------------------------------------------------------------
 // Block model
 // ---------------------------------------------------------------------------
 
@@ -64,7 +87,7 @@ function buildBlocks(resume: Resume): ContentBlock[] {
     ),
   });
 
-  resume.experiences.forEach((exp, i) => {
+  sortExperiences(resume.experiences).forEach((exp, i) => {
     blocks.push({ id: `exp-${i}`, node: <ResumeExperienceItem experience={exp} /> });
   });
 
@@ -132,10 +155,14 @@ function packBlocks(
 function SidebarContent({ resume }: { resume: Resume }) {
   return (
     <>
-      <ResumeAvatar avatar={resume.contact.avatar} />
+      <ResumeAvatar
+        avatar={resume.contact.avatar}
+        firstname={resume.contact.firstname}
+        lastname={resume.contact.lastname}
+      />
       <ResumeContact contact={resume.contact} />
       <ResumeSeparator />
-      <ResumeFormation formations={resume.formations} />
+      <ResumeFormation formations={sortFormations(resume.formations)} />
       <ResumeSeparator />
       <ResumeSkills skills={resume.skills} />
       <ResumeSeparator />

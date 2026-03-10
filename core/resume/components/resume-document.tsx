@@ -19,7 +19,11 @@ export function ResumeDocument({ resume }: ResumeDocumentProps) {
     <article className="resume-document font-sans text-xs w-[210mm] bg-white grid grid-cols-[260px_1fr] items-start">
       {/* LEFT COLUMN */}
       <aside className="resume-sidebar bg-black/15 px-8 py-4 flex flex-col min-h-[1123px]">
-        <ResumeAvatar avatar="/images/avatar.jpg" />
+        <ResumeAvatar
+          avatar={resume.contact.avatar}
+          firstname={resume.contact.firstname}
+          lastname={resume.contact.lastname}
+        />
         <ResumeContact contact={resume.contact} />
         <ResumeSeparator />
         <ResumeFormation formations={resume.formations} />
