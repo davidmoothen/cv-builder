@@ -18,6 +18,11 @@ const fontRaleway = Raleway({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   title: "CV Builder — Créez votre CV professionnel en ligne",
   description:
     "Éditeur de CV A4 gratuit et open source. Créez, éditez et exportez votre CV en PDF directement depuis votre navigateur. Aucun compte requis.",
