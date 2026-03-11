@@ -187,6 +187,7 @@ function Page({ resume, blocks, pageIndex, totalPages }: PageProps) {
     <div
       className="relative bg-white shadow-xl overflow-hidden print:shadow-none"
       style={{
+        color: "black",
         width: PAGE_WIDTH,
         height: PAGE_HEIGHT,
         breakAfter: pageIndex < totalPages - 1 ? "page" : "auto",
@@ -293,7 +294,7 @@ export function ResumePageBuilder({ resume }: { resume: Resume }) {
       </div>
 
       {/* Screen preview: pages stacked with gap. Print: stacked with page breaks. */}
-      <div className="flex flex-col items-center gap-8 p-8 print:p-0 print:gap-0 print:block">
+      <div className="flex flex-col items-start lg:items-center gap-8 p-8 print:p-0 print:gap-0 print:block">
         {pages.map((pageBlocks, i) => (
           <Page
             key={i}

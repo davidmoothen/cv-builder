@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans, Raleway } from "next/font/google";
-import Script from "next/script";
 import "./globals.css";
 
 const fontInter = Inter({
@@ -51,13 +50,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      {process.env.NEXT_PUBLIC_UMAMI_URL && process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
-        <Script
+    <html lang="en" data-theme="light" style={{ colorScheme: "light" }}>
+      {process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
+        // eslint-disable-next-line @next/next/no-before-interactive-script-outside-document
+        <script
           async
           src={`${process.env.NEXT_PUBLIC_UMAMI_URL}/script.js`}
           data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
-          strategy="afterInteractive"
         />
       )}
       <body className={`${fontInter.variable} ${fontNoto.variable} ${fontRaleway.variable} antialiased`}>
