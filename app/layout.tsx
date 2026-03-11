@@ -40,12 +40,14 @@ export const metadata: Metadata = {
     title: "CV Builder — Créez votre CV professionnel en ligne",
     description:
       "Éditeur de CV A4 gratuit et open source. Créez, éditez et exportez votre CV en PDF directement depuis votre navigateur. Aucun compte requis.",
+    images: [{ url: "https://cv.jinio.us/images/metas/image.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "CV Builder — Créez votre CV professionnel en ligne",
     description:
       "Éditeur de CV A4 gratuit et open source. Créez, éditez et exportez votre CV en PDF directement depuis votre navigateur. Aucun compte requis.",
+    images: ["https://cv.jinio.us/images/metas/image.jpg"],
   },
 };
 
