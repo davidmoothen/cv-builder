@@ -9,9 +9,7 @@ import { LandingNavbar } from "./landing-navbar";
 import { EditorMockup } from "./editor-mockup";
 import { CtaButton } from "./cta-button";
 import { Footer } from "@/core/components/footer";
-
-const GITHUB_URL = "https://github.com/davidmoothen/cv-builder";
-const AUTHOR_URL = "https://jinio.us";
+import { APP_CONFIG } from "@/core/config/app";
 
 // ---------------------------------------------------------------------------
 // Features
@@ -63,14 +61,14 @@ function Hero() {
         <p className="text-sm text-gray-400 mt-2 mb-10">
           Créé par{" "}
           <a
-            href={AUTHOR_URL}
+            href={APP_CONFIG.author.url}
             target="_blank"
             rel="noopener noreferrer"
             className="underline underline-offset-2 hover:text-gray-700 transition-colors"
           >
-            David Moothen
+            {APP_CONFIG.author.name}
           </a>
-          {" "}· Fractional CTO & Lead Tech
+          {" "}· {APP_CONFIG.author.title}
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <CtaButton
@@ -80,7 +78,7 @@ function Hero() {
             Créer mon CV →
           </CtaButton>
           <a
-            href={GITHUB_URL}
+            href={APP_CONFIG.github}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 border border-gray-200 text-gray-600

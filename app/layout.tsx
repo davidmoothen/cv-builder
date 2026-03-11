@@ -17,6 +17,8 @@ const fontRaleway = Raleway({
   subsets: ["latin"],
 });
 
+const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+
 export const metadata: Metadata = {
   icons: {
     icon: "/icon.svg",
@@ -26,9 +28,9 @@ export const metadata: Metadata = {
   title: "CV Builder — Créez votre CV professionnel en ligne",
   description:
     "Éditeur de CV A4 gratuit et open source. Créez, éditez et exportez votre CV en PDF directement depuis votre navigateur. Aucun compte requis.",
-  metadataBase: new URL("https://cv.jinio.us"),
+  metadataBase: new URL(APP_URL),
   alternates: {
-    canonical: "https://cv.jinio.us",
+    canonical: APP_URL,
   },
   robots: {
     index: true,
@@ -36,18 +38,18 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    url: "https://cv.jinio.us",
+    url: APP_URL,
     title: "CV Builder — Créez votre CV professionnel en ligne",
     description:
       "Éditeur de CV A4 gratuit et open source. Créez, éditez et exportez votre CV en PDF directement depuis votre navigateur. Aucun compte requis.",
-    images: [{ url: "https://cv.jinio.us/images/metas/image.jpg", width: 1200, height: 630 }],
+    images: [{ url: `${APP_URL}/images/metas/image.jpg`, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "CV Builder — Créez votre CV professionnel en ligne",
     description:
       "Éditeur de CV A4 gratuit et open source. Créez, éditez et exportez votre CV en PDF directement depuis votre navigateur. Aucun compte requis.",
-    images: ["https://cv.jinio.us/images/metas/image.jpg"],
+    images: [`${APP_URL}/images/metas/image.jpg`],
   },
 };
 

@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { GithubIcon } from "lucide-react";
-
-const GITHUB_URL = "https://github.com/davidmoothen/cv-builder";
-const AUTHOR_URL = "https://jinio.us";
+import { APP_CONFIG } from "@/core/config/app";
 
 export function Footer() {
   return (
@@ -21,14 +19,14 @@ export function Footer() {
         </span>
         <span className="text-gray-400">
           Un projet open source de{" "}
-          <a href={AUTHOR_URL} target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors">
-            David Moothen
+          <a href={APP_CONFIG.author.url} target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors">
+            {APP_CONFIG.author.name}
           </a>
-          {" "}· Fractional CTO & Lead Tech
+          {" "}· {APP_CONFIG.author.title}
         </span>
         <div className="flex items-center gap-5">
           <a
-            href={GITHUB_URL}
+            href={APP_CONFIG.github}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-1.5 hover:text-gray-700 transition-colors"

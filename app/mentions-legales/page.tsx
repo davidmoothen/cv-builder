@@ -1,11 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { APP_CONFIG } from "@/core/config/app";
 
 export const metadata: Metadata = {
   title: "Mentions légales — CV Builder",
 };
-
-const GITHUB_URL = "https://github.com/davidmoothen/cv-builder";
 
 export default function MentionsLegalesPage() {
   return (
@@ -33,7 +32,7 @@ export default function MentionsLegalesPage() {
             <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
               Éditeur du site
             </h2>
-            <p>David Moothen — Fractional CTO & Lead Tech</p>
+            <p>{APP_CONFIG.author.name} — {APP_CONFIG.author.title}</p>
             <p>SIREN : [à compléter]</p>
             <p>
               Contact :{" "}
@@ -43,7 +42,7 @@ export default function MentionsLegalesPage() {
             </p>
             <p>
               Site :{" "}
-              <a href="https://jinio.us" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-900 transition-colors">
+              <a href={APP_CONFIG.author.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-900 transition-colors">
                 jinio.us
               </a>
             </p>
@@ -68,7 +67,7 @@ export default function MentionsLegalesPage() {
             </h2>
             <p>
               Le code source de ce projet est disponible sous licence MIT sur{" "}
-              <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-900 transition-colors">
+              <a href={APP_CONFIG.github} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-gray-900 transition-colors">
                 GitHub
               </a>
               . Vous êtes libre de l'utiliser, le modifier et le redistribuer selon les termes de cette licence.

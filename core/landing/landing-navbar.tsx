@@ -1,19 +1,18 @@
 import Link from "next/link";
 import { GithubIcon } from "lucide-react";
-
-const GITHUB_URL = "https://github.com/davidmoothen/cv-builder";
+import { APP_CONFIG } from "@/core/config/app";
 
 export function LandingNavbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
         <span className="font-raleway font-light uppercase tracking-widest text-sm text-gray-900">
-          CV Builder
+          {APP_CONFIG.appName}
         </span>
 
         <div className="flex items-center gap-3">
           <a
-            href={GITHUB_URL}
+            href={APP_CONFIG.github}
             target="_blank"
             rel="noopener noreferrer"
             className="p-2 text-gray-400 hover:text-gray-700 transition-colors"

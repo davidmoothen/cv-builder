@@ -17,13 +17,18 @@ export function EditorMockup() {
 
       {/* App shell */}
       <div className="flex bg-gray-200" style={{ height: 380 }}>
-
         {/* Preview column */}
         <div className="flex-1 flex items-start justify-center p-5 overflow-hidden">
           {/* Miniature CV card */}
-          <div className="bg-white rounded shadow-lg flex overflow-hidden" style={{ width: 210, height: 297 }}>
+          <div
+            className="bg-white rounded shadow-lg flex overflow-hidden"
+            style={{ width: 210, height: 297 }}
+          >
             {/* Sidebar strip */}
-            <div className="bg-gray-200 flex flex-col gap-2 p-3" style={{ width: 68 }}>
+            <div
+              className="bg-gray-200 flex flex-col gap-2 p-3"
+              style={{ width: 68 }}
+            >
               <div className="w-full aspect-square rounded-full bg-gray-300 mb-1" />
               <div className="h-1.5 bg-gray-300 rounded w-4/5" />
               <div className="h-1.5 bg-gray-300 rounded w-3/5" />
@@ -60,7 +65,10 @@ export function EditorMockup() {
         </div>
 
         {/* Editor panel */}
-        <div className="bg-white border-l border-gray-200 flex flex-col" style={{ width: 220 }}>
+        <div
+          className="bg-white border-l border-gray-200 flex flex-col"
+          style={{ width: 220 }}
+        >
           <div className="px-4 py-3 bg-gray-50 border-b border-gray-100">
             <div className="h-2 bg-gray-300 rounded w-2/3" />
           </div>
@@ -73,7 +81,9 @@ export function EditorMockup() {
           ].map(([label, width]) => (
             <div key={label} className="px-4 py-3 border-b border-gray-100">
               <div className="h-1.5 bg-gray-400 rounded w-1/3 mb-2" />
-              <div className={`h-6 bg-gray-100 rounded border border-dashed border-gray-200 w-${width}`} />
+              <div
+                className={`h-6 bg-gray-100 rounded border border-dashed border-gray-200 w-${width}`}
+              />
             </div>
           ))}
         </div>
