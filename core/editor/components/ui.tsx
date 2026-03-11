@@ -3,7 +3,7 @@ import { PlusIcon, Trash2Icon } from "lucide-react"
 import { twMerge } from "tailwind-merge"
 import type { ReactNode } from "react"
 
-export const inputCls = "w-full border border-gray-200 rounded-md px-3 py-2 text-sm placeholder:text-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-gray-400 bg-white"
+export const inputCls = "w-full border border-gray-200 rounded-md px-3 py-2 text-sm text-gray-900 placeholder:text-gray-300 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:border-gray-400 bg-white"
 export const textareaCls = twMerge(inputCls, "resize-none")
 
 export function Field({ label, children, className }: { label: string; children: ReactNode; className?: string }) {
