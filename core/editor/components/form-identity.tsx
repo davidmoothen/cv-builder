@@ -12,12 +12,12 @@ type IdentityFormData = {
   email: string
   location: string
   website: string
-  avatar: string
   birthdate: string
 }
 
 export function FormIdentity() {
   const patchResume = useResumeStore(s => s.patchResume)
+
   const { register, watch } = useForm<IdentityFormData>({
     defaultValues: (() => {
       const r = useResumeStore.getState().resume
@@ -29,7 +29,6 @@ export function FormIdentity() {
         email: r.contact.email,
         location: r.contact.location,
         website: r.contact.website,
-        avatar: r.contact.avatar ?? "",
         birthdate: r.contact.birthdate ?? "",
       }
     })(),
@@ -50,7 +49,6 @@ export function FormIdentity() {
           email: v.email,
           location: v.location,
           website: v.website,
-          avatar: v.avatar,
           birthdate: v.birthdate,
         },
       })
@@ -84,9 +82,6 @@ export function FormIdentity() {
         </Field>
         <Field label="Site web">
           <input className={inputCls} {...register("website")} />
-        </Field>
-        <Field label="Photo de profil (URL)">
-          <input className={inputCls} placeholder="https://..." {...register("avatar")} />
         </Field>
         <Field label="Date de naissance">
           <input className={inputCls} type="date" {...register("birthdate")} />

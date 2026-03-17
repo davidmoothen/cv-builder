@@ -11,7 +11,6 @@ export const randomResumes: Resume[] = [
       email: "lucas.moreau@gmail.com",
       location: "Lyon",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -70,7 +69,6 @@ export const randomResumes: Resume[] = [
       email: "theo.blanchard@outlook.fr",
       location: "Nantes",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -120,7 +118,6 @@ export const randomResumes: Resume[] = [
       email: "camille.fontaine@datascience.fr",
       location: "Paris 13e",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -171,7 +168,6 @@ export const randomResumes: Resume[] = [
       email: "jade.rousseau@design.fr",
       location: "Bordeaux",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -230,7 +226,6 @@ export const randomResumes: Resume[] = [
       email: "antoine.mercier@pm.fr",
       location: "Paris 9e",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -280,7 +275,6 @@ export const randomResumes: Resume[] = [
       email: "marie.lebrun@sante.fr",
       location: "Toulouse",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -330,7 +324,6 @@ export const randomResumes: Resume[] = [
       email: "dr.dupont@cabinet-medical.fr",
       location: "Rennes",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -381,7 +374,6 @@ export const randomResumes: Resume[] = [
       email: "sophie.garnier@comptabilite.fr",
       location: "Lille",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -431,7 +423,6 @@ export const randomResumes: Resume[] = [
       email: "elise.lecomte@architecture.fr",
       location: "Strasbourg",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -481,7 +472,6 @@ export const randomResumes: Resume[] = [
       email: "nicolas.bernard@cuisine.fr",
       location: "Lyon",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -531,7 +521,6 @@ export const randomResumes: Resume[] = [
       email: "claire.martin@education.gouv.fr",
       location: "Montpellier",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -581,7 +570,6 @@ export const randomResumes: Resume[] = [
       email: "aude.petit@yoga.fr",
       location: "Marseille",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -632,7 +620,6 @@ export const randomResumes: Resume[] = [
       email: "julien.thomas@immo.fr",
       location: "Nice",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -683,7 +670,6 @@ export const randomResumes: Resume[] = [
       email: "lea.dubois@beaute.fr",
       location: "Paris 1er",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -733,7 +719,6 @@ export const randomResumes: Resume[] = [
       email: "patrick.girard@transport.fr",
       location: "Clermont-Ferrand",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -783,7 +768,6 @@ export const randomResumes: Resume[] = [
       email: "emma.lefebvre@graphisme.fr",
       location: "Nantes",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -842,7 +826,6 @@ export const randomResumes: Resume[] = [
       email: "hugo.renard@photo.fr",
       location: "Paris",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -901,7 +884,6 @@ export const randomResumes: Resume[] = [
       email: "alexandre.perrin@avocat-paris.fr",
       location: "Paris 8e",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -952,7 +934,6 @@ export const randomResumes: Resume[] = [
       email: "manon.simon@presse.fr",
       location: "Paris 5e",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -1003,7 +984,6 @@ export const randomResumes: Resume[] = [
       email: "chloe.laurent@social.fr",
       location: "Bordeaux",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -1053,7 +1033,6 @@ export const randomResumes: Resume[] = [
       email: "isabelle.durand@rh.fr",
       location: "Grenoble",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -1103,7 +1082,6 @@ export const randomResumes: Resume[] = [
       email: "francois.legrand@direction.fr",
       location: "Paris La Défense",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -1153,7 +1131,6 @@ export const randomResumes: Resume[] = [
       email: "sebastien.michel@elec.fr",
       location: "Rouen",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -1202,7 +1179,6 @@ export const randomResumes: Resume[] = [
       email: "celine.morvan@pharmacie.fr",
       location: "Angers",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -1252,7 +1228,6 @@ export const randomResumes: Resume[] = [
       email: "thomas.beaumont@kine.fr",
       location: "Grenoble",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -1302,7 +1277,6 @@ export const randomResumes: Resume[] = [
       email: "laura.vidal@psychologue.fr",
       location: "Toulouse",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -1352,7 +1326,6 @@ export const randomResumes: Resume[] = [
       email: "romain.giraud@product.fr",
       location: "Paris 2e",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -1402,7 +1375,6 @@ export const randomResumes: Resume[] = [
       email: "david.rolland@logistique.fr",
       location: "Lyon",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -1452,7 +1424,6 @@ export const randomResumes: Resume[] = [
       email: "nathalie.coste@traduction.fr",
       location: "Montpellier",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [
@@ -1503,7 +1474,6 @@ export const randomResumes: Resume[] = [
       email: "paul.chevalier@strategy.fr",
       location: "Paris 7e",
       website: "",
-      avatar: "",
     },
     bio: {
       sentences: [

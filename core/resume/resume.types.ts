@@ -5,7 +5,8 @@ export interface ResumeContact {
   email: string;
   location: string;
   website: string;
-  avatar?: string;
+  photoUrl?: string;
+  photoBase64?: string;
   birthdate?: string;
 }
 

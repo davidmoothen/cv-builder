@@ -156,7 +156,8 @@ function SidebarContent({ resume }: { resume: Resume }) {
   return (
     <>
       <ResumeAvatar
-        avatar={resume.contact.avatar}
+        photoUrl={resume.contact.photoUrl}
+        photoBase64={resume.contact.photoBase64}
         firstname={resume.contact.firstname}
         lastname={resume.contact.lastname}
       />

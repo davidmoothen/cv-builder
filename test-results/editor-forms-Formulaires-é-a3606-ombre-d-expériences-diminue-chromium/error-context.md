@@ -1,0 +1,605 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e6] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e7]:
+      - img [ref=e8]
+    - generic [ref=e11]:
+      - button "Open issues overlay" [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: "2"
+          - generic [ref=e15]: "3"
+        - generic [ref=e16]:
+          - text: Issue
+          - generic [ref=e17]: s
+      - button "Collapse issues badge" [ref=e18]:
+        - img [ref=e19]
+  - generic [ref=e21]:
+    - banner [ref=e23]:
+      - link "CV Builder" [ref=e24] [cursor=pointer]:
+        - /url: /
+      - button "Imprimer" [ref=e25]:
+        - img [ref=e26]
+        - text: Imprimer
+    - generic [ref=e30]:
+      - generic [ref=e31]:
+        - generic:
+          - generic:
+            - banner:
+              - generic:
+                - heading [level=1]: Jane Doe
+                - paragraph: Lead Developer Full Stack · Lead Tech · Builder SaaS
+          - generic:
+            - generic:
+              - paragraph: J'interviens comme Lead Tech Full Stack pour des startups et PME qui veulent aller vite sans sacrifier la qualité.
+          - generic:
+            - heading [level=2]: Expériences
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - text: Lead Developer Full Stack
+                  - generic: — Freelance
+                - paragraph: jan. 2020 → aujourd'hui
+              - paragraph: "Référent technique et chef de projet sur l'ensemble du cycle : conception, architecture, développement, livraison."
+              - list:
+                - listitem: Architecture SaaS scalable — Next.js / Node.js / PostgreSQL
+                - listitem: Abonnement récurrent, upload sécurisé, email automation
+                - listitem: 50 000+ utilisateurs cumulés
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - text: Développeur Full Stack
+                  - generic: — Acme Corp
+                - paragraph: 2017 – 2020
+              - paragraph: Développement de plateformes web B2B.
+              - list:
+                - listitem: Refonte complète de l'application principale
+                - listitem: Réduction du time-to-market de 30%
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - text: Développeur Frontend
+                  - generic: — StartupXYZ
+                - paragraph: 2015 – 2017
+              - paragraph: Intégration d'interfaces React sur une application de gestion de projet SaaS.
+              - list:
+                - listitem: Migration Angular → React sur 3 mois
+                - listitem: Mise en place d'un design system interne
+                - listitem: Amélioration du score Lighthouse de 45 à 92
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - text: Développeur Full Stack
+                  - generic: — Agence Digitale Pixel
+                - paragraph: 2013 – 2015
+              - paragraph: Conception et développement de sites web et applications sur mesure pour des clients PME.
+              - list:
+                - listitem: 15+ projets livrés en autonomie
+                - listitem: Stack PHP / Symfony + jQuery
+                - listitem: Intégration de passerelles de paiement (PayPal, Stripe)
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - text: Développeur Web Junior
+                  - generic: — Freelance
+                - paragraph: 2011 – 2013
+              - paragraph: "Premiers projets en freelance : sites vitrine, e-commerce et applications métier."
+              - list:
+                - listitem: Développement de boutiques PrestaShop
+                - listitem: Création d'une application de suivi RH pour une TPE
+          - generic:
+            - generic:
+              - generic:
+                - generic:
+                  - text: Stage Développeur
+                  - generic: — Tech Innovations
+                - paragraph: 2010 – 2011
+              - paragraph: Stage de fin d'études au sein d'une startup spécialisée en IA appliquée au recrutement.
+              - list:
+                - listitem: Développement d'un module de parsing de CV (Python / NLTK)
+                - listitem: Contribution au pipeline de traitement NLP
+          - generic:
+            - heading [level=2]: Projets personnels
+          - generic:
+            - generic:
+              - generic:
+                - text: Mon SaaS
+                - generic: — Projet personnel · V1 en cours
+              - paragraph: Description courte de votre projet personnel.
+              - paragraph: "Stack : Next.js / NestJS / PostgreSQL"
+              - list:
+                - listitem: Développé en solo en ~2 semaines
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - generic [ref=e34]:
+              - generic [ref=e36]: JD
+              - generic [ref=e37]:
+                - heading "Contact" [level=2] [ref=e38]
+                - generic [ref=e39]:
+                  - generic [ref=e40]:
+                    - img [ref=e41]
+                    - paragraph [ref=e43]: +33 6 00 00 00 00
+                  - generic [ref=e44]:
+                    - img [ref=e45]
+                    - paragraph [ref=e48]: jane.doe@example.com
+                  - generic [ref=e49]:
+                    - img [ref=e50]
+                    - paragraph [ref=e53]: Paris · Full remote
+                  - generic [ref=e54]:
+                    - img [ref=e55]
+                    - paragraph [ref=e58]: janedoe.dev
+              - generic [ref=e60]:
+                - heading "Formation" [level=2] [ref=e61]
+                - generic [ref=e62]:
+                  - paragraph [ref=e63]: "2015"
+                  - paragraph [ref=e64]: Master 2 Génie Logiciel
+                  - paragraph [ref=e65]: Université Paris — Informatique
+              - generic [ref=e67]:
+                - heading "Skills" [level=2] [ref=e68]
+                - generic [ref=e69]:
+                  - paragraph [ref=e70]: Backend
+                  - list [ref=e71]:
+                    - listitem [ref=e72]: Node.js
+                    - listitem [ref=e73]: NestJS
+                    - listitem [ref=e74]: PostgreSQL
+                    - listitem [ref=e75]: MongoDB
+                - generic [ref=e76]:
+                  - paragraph [ref=e77]: Frontend
+                  - list [ref=e78]:
+                    - listitem [ref=e79]: Next.js
+                    - listitem [ref=e80]: React
+                    - listitem [ref=e81]: Tailwind CSS
+                - generic [ref=e82]:
+                  - paragraph [ref=e83]: DevOps & Outils
+                  - list [ref=e84]:
+                    - listitem [ref=e85]: Docker
+                    - listitem [ref=e86]: CI/CD
+                    - listitem [ref=e87]: Cloud
+              - generic [ref=e89]:
+                - heading "Langues" [level=2] [ref=e90]
+                - list [ref=e91]:
+                  - listitem [ref=e92]: Français — natif
+                  - listitem [ref=e93]: Anglais — courant
+            - generic [ref=e94]:
+              - banner [ref=e96]:
+                - generic [ref=e97]:
+                  - heading "Jane Doe" [level=1] [ref=e98]:
+                    - text: Jane
+                    - text: Doe
+                  - paragraph [ref=e100]: Lead Developer Full Stack · Lead Tech · Builder SaaS
+              - paragraph [ref=e103]: J'interviens comme Lead Tech Full Stack pour des startups et PME qui veulent aller vite sans sacrifier la qualité.
+              - heading "Expériences" [level=2] [ref=e106]
+              - generic [ref=e108]:
+                - generic [ref=e109]:
+                  - generic [ref=e110]:
+                    - text: Lead Developer Full Stack
+                    - generic [ref=e111]: — Freelance
+                  - paragraph [ref=e112]: jan. 2020 → aujourd'hui
+                - paragraph [ref=e113]: "Référent technique et chef de projet sur l'ensemble du cycle : conception, architecture, développement, livraison."
+                - list [ref=e114]:
+                  - listitem [ref=e115]: Architecture SaaS scalable — Next.js / Node.js / PostgreSQL
+                  - listitem [ref=e116]: Abonnement récurrent, upload sécurisé, email automation
+                  - listitem [ref=e117]: 50 000+ utilisateurs cumulés
+              - generic [ref=e119]:
+                - generic [ref=e120]:
+                  - generic [ref=e121]:
+                    - text: Développeur Full Stack
+                    - generic [ref=e122]: — Acme Corp
+                  - paragraph [ref=e123]: 2017 – 2020
+                - paragraph [ref=e124]: Développement de plateformes web B2B.
+                - list [ref=e125]:
+                  - listitem [ref=e126]: Refonte complète de l'application principale
+                  - listitem [ref=e127]: Réduction du time-to-market de 30%
+              - generic [ref=e129]:
+                - generic [ref=e130]:
+                  - generic [ref=e131]:
+                    - text: Développeur Frontend
+                    - generic [ref=e132]: — StartupXYZ
+                  - paragraph [ref=e133]: 2015 – 2017
+                - paragraph [ref=e134]: Intégration d'interfaces React sur une application de gestion de projet SaaS.
+                - list [ref=e135]:
+                  - listitem [ref=e136]: Migration Angular → React sur 3 mois
+                  - listitem [ref=e137]: Mise en place d'un design system interne
+                  - listitem [ref=e138]: Amélioration du score Lighthouse de 45 à 92
+              - generic [ref=e140]:
+                - generic [ref=e141]:
+                  - generic [ref=e142]:
+                    - text: Développeur Full Stack
+                    - generic [ref=e143]: — Agence Digitale Pixel
+                  - paragraph [ref=e144]: 2013 – 2015
+                - paragraph [ref=e145]: Conception et développement de sites web et applications sur mesure pour des clients PME.
+                - list [ref=e146]:
+                  - listitem [ref=e147]: 15+ projets livrés en autonomie
+                  - listitem [ref=e148]: Stack PHP / Symfony + jQuery
+                  - listitem [ref=e149]: Intégration de passerelles de paiement (PayPal, Stripe)
+              - generic [ref=e151]:
+                - generic [ref=e152]:
+                  - generic [ref=e153]:
+                    - text: Développeur Web Junior
+                    - generic [ref=e154]: — Freelance
+                  - paragraph [ref=e155]: 2011 – 2013
+                - paragraph [ref=e156]: "Premiers projets en freelance : sites vitrine, e-commerce et applications métier."
+                - list [ref=e157]:
+                  - listitem [ref=e158]: Développement de boutiques PrestaShop
+                  - listitem [ref=e159]: Création d'une application de suivi RH pour une TPE
+          - generic [ref=e162]:
+            - generic [ref=e163]:
+              - generic [ref=e164]: Jane Doe
+              - generic [ref=e165]: 2 / 2
+            - generic [ref=e167]:
+              - generic [ref=e168]:
+                - generic [ref=e169]:
+                  - text: Stage Développeur
+                  - generic [ref=e170]: — Tech Innovations
+                - paragraph [ref=e171]: 2010 – 2011
+              - paragraph [ref=e172]: Stage de fin d'études au sein d'une startup spécialisée en IA appliquée au recrutement.
+              - list [ref=e173]:
+                - listitem [ref=e174]: Développement d'un module de parsing de CV (Python / NLTK)
+                - listitem [ref=e175]: Contribution au pipeline de traitement NLP
+            - heading "Projets personnels" [level=2] [ref=e178]
+            - generic [ref=e180]:
+              - generic [ref=e181]:
+                - text: Mon SaaS
+                - generic [ref=e182]: — Projet personnel · V1 en cours
+              - paragraph [ref=e183]: Description courte de votre projet personnel.
+              - paragraph [ref=e184]: "Stack : Next.js / NestJS / PostgreSQL"
+              - list [ref=e185]:
+                - listitem [ref=e186]: Développé en solo en ~2 semaines
+      - generic [ref=e189]:
+        - generic [ref=e190]:
+          - paragraph [ref=e191]: Charger un CV exemple
+          - generic [ref=e192]:
+            - button "Sélectionner un métier" [ref=e194]:
+              - generic [ref=e195]: Sélectionner un métier
+              - img [ref=e196]
+            - button "CV aléatoire" [ref=e198]:
+              - img [ref=e199]
+        - generic [ref=e205]:
+          - paragraph [ref=e207]: Identité
+          - generic [ref=e208]:
+            - generic [ref=e209]:
+              - generic [ref=e210]:
+                - generic [ref=e211]: Prénom
+                - textbox "Prénom" [ref=e212]: Jane
+              - generic [ref=e213]:
+                - generic [ref=e214]: Nom
+                - textbox "Nom" [ref=e215]: Doe
+            - generic [ref=e216]:
+              - generic [ref=e217]: Titre du CV
+              - textbox "Titre du CV" [ref=e218]: Lead Developer Full Stack · Lead Tech · Builder SaaS
+            - generic [ref=e219]:
+              - generic [ref=e220]: Téléphone
+              - textbox "Téléphone" [ref=e221]: +33 6 00 00 00 00
+            - generic [ref=e222]:
+              - generic [ref=e223]: Email
+              - textbox "Email" [ref=e224]: jane.doe@example.com
+            - generic [ref=e225]:
+              - generic [ref=e226]: Localisation
+              - textbox "Localisation" [ref=e227]: Paris · Full remote
+            - generic [ref=e228]:
+              - generic [ref=e229]: Site web
+              - textbox "Site web" [ref=e230]: janedoe.dev
+            - generic [ref=e231]:
+              - generic [ref=e232]: Photo de profil (URL)
+              - textbox "Photo de profil (URL)" [ref=e233]:
+                - /placeholder: https://...
+            - generic [ref=e234]:
+              - generic [ref=e235]: Date de naissance
+              - textbox "Date de naissance" [ref=e236]
+          - paragraph [ref=e238]: Bio
+          - generic [ref=e239]:
+            - generic [ref=e240]:
+              - generic [ref=e241]: Phrases
+              - generic [ref=e242]:
+                - generic [ref=e244]:
+                  - textbox [ref=e245]: J'interviens comme Lead Tech Full Stack pour des startups et PME qui veulent aller vite sans sacrifier la qualité.
+                  - button "Supprimer" [ref=e246]:
+                    - img [ref=e247]
+                - button "Ajouter une phrase" [ref=e250]:
+                  - img [ref=e251]
+                  - text: Ajouter une phrase
+            - generic [ref=e252]:
+              - generic [ref=e253]: Points clés (facultatif)
+              - button "Ajouter un point" [ref=e255]:
+                - img [ref=e256]
+                - text: Ajouter un point
+          - paragraph [ref=e258]: Formation
+          - generic [ref=e260]:
+            - generic [ref=e261]:
+              - generic [ref=e262]:
+                - generic [ref=e263]: Formation 1
+                - button "Supprimer" [ref=e264]:
+                  - img [ref=e265]
+              - generic [ref=e268]:
+                - generic [ref=e269]: Année / Période
+                - textbox "Année / Période" [ref=e270]: "2015"
+              - generic [ref=e271]:
+                - generic [ref=e272]: Diplôme / Titre
+                - textbox "Diplôme / Titre" [ref=e273]: Master 2 Génie Logiciel
+              - generic [ref=e274]:
+                - generic [ref=e275]: École
+                - textbox "École" [ref=e276]: Université Paris — Informatique
+            - button "Ajouter une formation" [ref=e277]:
+              - img [ref=e278]
+              - text: Ajouter une formation
+          - paragraph [ref=e280]: Compétences
+          - generic [ref=e282]:
+            - generic [ref=e283]:
+              - generic [ref=e284]:
+                - generic [ref=e285]: Groupe 1
+                - button "Supprimer" [ref=e286]:
+                  - img [ref=e287]
+              - generic [ref=e290]:
+                - generic [ref=e291]: Catégorie
+                - textbox "Catégorie" [ref=e292]: Backend
+              - generic [ref=e293]:
+                - generic [ref=e294]: Items
+                - generic [ref=e295]:
+                  - generic [ref=e296]:
+                    - textbox [ref=e297]: Node.js
+                    - button "Supprimer" [ref=e298]:
+                      - img [ref=e299]
+                  - generic [ref=e302]:
+                    - textbox [ref=e303]: NestJS
+                    - button "Supprimer" [ref=e304]:
+                      - img [ref=e305]
+                  - generic [ref=e308]:
+                    - textbox [ref=e309]: PostgreSQL
+                    - button "Supprimer" [ref=e310]:
+                      - img [ref=e311]
+                  - generic [ref=e314]:
+                    - textbox [ref=e315]: MongoDB
+                    - button "Supprimer" [ref=e316]:
+                      - img [ref=e317]
+                  - button "Ajouter" [ref=e320]:
+                    - img [ref=e321]
+                    - text: Ajouter
+            - generic [ref=e322]:
+              - generic [ref=e323]:
+                - generic [ref=e324]: Groupe 2
+                - button "Supprimer" [ref=e325]:
+                  - img [ref=e326]
+              - generic [ref=e329]:
+                - generic [ref=e330]: Catégorie
+                - textbox "Catégorie" [ref=e331]: Frontend
+              - generic [ref=e332]:
+                - generic [ref=e333]: Items
+                - generic [ref=e334]:
+                  - generic [ref=e335]:
+                    - textbox [ref=e336]: Next.js
+                    - button "Supprimer" [ref=e337]:
+                      - img [ref=e338]
+                  - generic [ref=e341]:
+                    - textbox [ref=e342]: React
+                    - button "Supprimer" [ref=e343]:
+                      - img [ref=e344]
+                  - generic [ref=e347]:
+                    - textbox [ref=e348]: Tailwind CSS
+                    - button "Supprimer" [ref=e349]:
+                      - img [ref=e350]
+                  - button "Ajouter" [ref=e353]:
+                    - img [ref=e354]
+                    - text: Ajouter
+            - generic [ref=e355]:
+              - generic [ref=e356]:
+                - generic [ref=e357]: Groupe 3
+                - button "Supprimer" [ref=e358]:
+                  - img [ref=e359]
+              - generic [ref=e362]:
+                - generic [ref=e363]: Catégorie
+                - textbox "Catégorie" [ref=e364]: DevOps & Outils
+              - generic [ref=e365]:
+                - generic [ref=e366]: Items
+                - generic [ref=e367]:
+                  - generic [ref=e368]:
+                    - textbox [ref=e369]: Docker
+                    - button "Supprimer" [ref=e370]:
+                      - img [ref=e371]
+                  - generic [ref=e374]:
+                    - textbox [ref=e375]: CI/CD
+                    - button "Supprimer" [ref=e376]:
+                      - img [ref=e377]
+                  - generic [ref=e380]:
+                    - textbox [ref=e381]: Cloud
+                    - button "Supprimer" [ref=e382]:
+                      - img [ref=e383]
+                  - button "Ajouter" [ref=e386]:
+                    - img [ref=e387]
+                    - text: Ajouter
+            - button "Ajouter un groupe" [ref=e388]:
+              - img [ref=e389]
+              - text: Ajouter un groupe
+          - paragraph [ref=e391]: Langues
+          - generic [ref=e393]:
+            - generic [ref=e394]:
+              - generic [ref=e395]:
+                - generic [ref=e396]:
+                  - generic [ref=e397]: Langue
+                  - textbox "Langue" [ref=e398]: Français
+                - generic [ref=e399]:
+                  - generic [ref=e400]: Niveau
+                  - textbox "Niveau" [ref=e401]:
+                    - /placeholder: natif, courant…
+                    - text: natif
+              - button "Supprimer" [ref=e403]:
+                - img [ref=e404]
+            - generic [ref=e407]:
+              - generic [ref=e408]:
+                - generic [ref=e409]:
+                  - generic [ref=e410]: Langue
+                  - textbox "Langue" [ref=e411]: Anglais
+                - generic [ref=e412]:
+                  - generic [ref=e413]: Niveau
+                  - textbox "Niveau" [ref=e414]:
+                    - /placeholder: natif, courant…
+                    - text: courant
+              - button "Supprimer" [ref=e416]:
+                - img [ref=e417]
+            - button "Ajouter une langue" [ref=e420]:
+              - img [ref=e421]
+              - text: Ajouter une langue
+          - paragraph [ref=e423]: Expériences
+          - generic [ref=e425]:
+            - generic [ref=e426]:
+              - button "Expérience 1 Supprimer" [ref=e427]:
+                - generic [ref=e428]: Expérience 1
+                - generic [ref=e429]:
+                  - button "Supprimer" [ref=e430]:
+                    - img [ref=e431]
+                  - img [ref=e434]
+              - generic [ref=e436]:
+                - generic [ref=e437]:
+                  - generic [ref=e438]:
+                    - generic [ref=e439]: Poste
+                    - textbox "Poste" [ref=e440]: Lead Developer Full Stack
+                  - generic [ref=e441]:
+                    - generic [ref=e442]: Entreprise
+                    - textbox "Entreprise" [ref=e443]: Freelance
+                - generic [ref=e444]:
+                  - generic [ref=e445]: Période
+                  - textbox "Période" [ref=e446]: jan. 2020 → aujourd'hui
+                - generic [ref=e447] [cursor=pointer]:
+                  - checkbox "Poste actuel" [checked] [ref=e448]
+                  - text: Poste actuel
+                - generic [ref=e449]:
+                  - generic [ref=e450]: Description
+                  - textbox "Description" [ref=e451]: "Référent technique et chef de projet sur l'ensemble du cycle : conception, architecture, développement, livraison."
+                - generic [ref=e452]:
+                  - generic [ref=e453]: Réalisations
+                  - generic [ref=e454]:
+                    - generic [ref=e455]:
+                      - textbox [ref=e456]: Architecture SaaS scalable — Next.js / Node.js / PostgreSQL
+                      - button "Supprimer" [ref=e457]:
+                        - img [ref=e458]
+                    - generic [ref=e461]:
+                      - textbox [ref=e462]: Abonnement récurrent, upload sécurisé, email automation
+                      - button "Supprimer" [ref=e463]:
+                        - img [ref=e464]
+                    - generic [ref=e467]:
+                      - textbox [ref=e468]: 50 000+ utilisateurs cumulés
+                      - button "Supprimer" [ref=e469]:
+                        - img [ref=e470]
+                    - button "Ajouter" [ref=e473]:
+                      - img [ref=e474]
+                      - text: Ajouter
+                - generic [ref=e475]:
+                  - generic [ref=e476]: Clients
+                  - button "Ajouter un client" [ref=e478]:
+                    - img [ref=e479]
+                    - text: Ajouter un client
+            - button "Expérience 2 Supprimer" [ref=e481]:
+              - generic [ref=e482]: Expérience 2
+              - generic [ref=e483]:
+                - button "Supprimer" [ref=e484]:
+                  - img [ref=e485]
+                - img [ref=e488]
+            - button "Expérience 3 Supprimer" [ref=e491]:
+              - generic [ref=e492]: Expérience 3
+              - generic [ref=e493]:
+                - button "Supprimer" [ref=e494]:
+                  - img [ref=e495]
+                - img [ref=e498]
+            - button "Expérience 4 Supprimer" [ref=e501]:
+              - generic [ref=e502]: Expérience 4
+              - generic [ref=e503]:
+                - button "Supprimer" [ref=e504]:
+                  - img [ref=e505]
+                - img [ref=e508]
+            - button "Expérience 5 Supprimer" [ref=e511]:
+              - generic [ref=e512]: Expérience 5
+              - generic [ref=e513]:
+                - button "Supprimer" [ref=e514]:
+                  - img [ref=e515]
+                - img [ref=e518]
+            - button "Expérience 6 Supprimer" [ref=e521]:
+              - generic [ref=e522]: Expérience 6
+              - generic [ref=e523]:
+                - button "Supprimer" [ref=e524]:
+                  - img [ref=e525]
+                - img [ref=e528]
+            - button "Ajouter une expérience" [ref=e530]:
+              - img [ref=e531]
+              - text: Ajouter une expérience
+          - paragraph [ref=e533]: Projets
+          - generic [ref=e535]:
+            - generic [ref=e536]:
+              - button "Projet 1 Supprimer" [ref=e537]:
+                - generic [ref=e538]: Projet 1
+                - generic [ref=e539]:
+                  - button "Supprimer" [ref=e540]:
+                    - img [ref=e541]
+                  - img [ref=e544]
+              - generic [ref=e546]:
+                - generic [ref=e547]:
+                  - generic [ref=e548]: Nom
+                  - textbox "Nom" [ref=e549]: Mon SaaS
+                - generic [ref=e550]:
+                  - generic [ref=e551]: Statut
+                  - textbox "Statut" [ref=e552]:
+                    - /placeholder: Projet personnel · En cours
+                    - text: Projet personnel · V1 en cours
+                - generic [ref=e553]:
+                  - generic [ref=e554]: Description
+                  - textbox "Description" [ref=e555]: Description courte de votre projet personnel.
+                - generic [ref=e556]:
+                  - generic [ref=e557]: Stack (technologies)
+                  - generic [ref=e558]:
+                    - generic [ref=e559]:
+                      - textbox "Next.js" [ref=e560]
+                      - button "Supprimer" [ref=e561]:
+                        - img [ref=e562]
+                    - generic [ref=e565]:
+                      - textbox "Next.js" [ref=e566]: NestJS
+                      - button "Supprimer" [ref=e567]:
+                        - img [ref=e568]
+                    - generic [ref=e571]:
+                      - textbox "Next.js" [ref=e572]: PostgreSQL
+                      - button "Supprimer" [ref=e573]:
+                        - img [ref=e574]
+                    - button "Ajouter" [ref=e577]:
+                      - img [ref=e578]
+                      - text: Ajouter
+                - generic [ref=e579]:
+                  - generic [ref=e580]: Réalisations
+                  - generic [ref=e581]:
+                    - generic [ref=e582]:
+                      - textbox [ref=e583]: Développé en solo en ~2 semaines
+                      - button "Supprimer" [ref=e584]:
+                        - img [ref=e585]
+                    - button "Ajouter" [ref=e588]:
+                      - img [ref=e589]
+                      - text: Ajouter
+            - button "Ajouter un projet" [ref=e590]:
+              - img [ref=e591]
+              - text: Ajouter un projet
+        - button "Réinitialiser le CV" [ref=e593]:
+          - img [ref=e594]
+          - text: Réinitialiser le CV
+    - contentinfo [ref=e598]:
+      - generic [ref=e599]:
+        - generic [ref=e600]:
+          - text: Fait avec
+          - link "Next.js" [ref=e601] [cursor=pointer]:
+            - /url: https://nextjs.org
+        - generic [ref=e602]:
+          - text: Un projet open source de
+          - link "David Moothen" [ref=e603] [cursor=pointer]:
+            - /url: https://jinio.us
+          - text: · Fractional CTO & Lead Tech
+        - generic [ref=e604]:
+          - link "GitHub" [ref=e605] [cursor=pointer]:
+            - /url: https://github.com/davidmoothen/cv-builder
+            - img [ref=e606]
+            - text: GitHub
+          - link "Mentions légales" [ref=e609] [cursor=pointer]:
+            - /url: /mentions-legales
+    - button "Fermer le panneau" [ref=e610]:
+      - img [ref=e611]
+  - alert [ref=e613]
+```

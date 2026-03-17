@@ -3,6 +3,7 @@ import { useState } from "react"
 import { RotateCcwIcon, ShuffleIcon } from "lucide-react"
 import { useResumeStore } from "@/core/resume"
 import { randomResumes } from "@/core/data/random-resumes"
+import { FormPhoto } from "./components/form-photo"
 import { FormIdentity } from "./components/form-identity"
 import { FormBio } from "./components/form-bio"
 import { FormFormation } from "./components/form-formation"
@@ -74,6 +75,7 @@ export function EditorPanel() {
 
         {/* Forms — remount on reset via key */}
         <div key={resetKey} className="flex-1">
+          <FormPhoto />
           <FormIdentity />
           <FormBio />
           <FormFormation />
