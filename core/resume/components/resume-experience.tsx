@@ -10,10 +10,14 @@ export function ResumeExperienceItem({ experience }: ResumeExperienceProps) {
     <div className="grid gap-2 mb-4 break-inside-avoid">
       <div>
         <div>
-          <span className="font-bold">{experience.job}</span>{" "}
-          <span className="text-black/50">— {experience.company}</span>
+          <span className="font-bold">{experience.job}</span>
+          {experience.company && (
+            <span className="text-black/50"> — {experience.company}</span>
+          )}
         </div>
-        <p className="text-black/60 italic">{experience.date}</p>
+        <p className="text-black/60 italic">
+          {experience.date}{experience.current ? " - aujourd'hui" : ""}
+        </p>
       </div>
       <p>{experience.description}</p>
       {experience.achievements.items.length > 0 && (

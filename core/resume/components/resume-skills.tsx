@@ -1,22 +1,26 @@
-import { ResumeSubtitle } from "./resume-subtitle";
+import { EditableSubtitle } from "./resume-editable-subtitle";
 import type { ResumeSkills } from "../resume.types";
 
 interface ResumeSkillsProps {
   skills: ResumeSkills[];
+  title?: string;
+  onSaveTitle?: (value: string) => void;
 }
 
-export function ResumeSkills({ skills }: ResumeSkillsProps) {
+export function ResumeSkills({ skills, title = "Skills", onSaveTitle }: ResumeSkillsProps) {
   return (
     <section className="break-inside-avoid">
-      <ResumeSubtitle title="Skills" />
+      <EditableSubtitle title={title} onSave={onSaveTitle ?? (() => {})} />
       {skills.map((skill, index) => (
-        <div key={`skill-${index}`}>
+        <div key={`skill-${index}`} className="mb-4">
           <p className="font-bold mb-2">{skill.title}</p>
-          <ul className="list-none list-inside mb-4">
+          <p className="leading-relaxed">
             {skill.items.map((item, j) => (
-              <li key={`skill-item-${index}-${j}`}>{item}</li>
+              <span key={`skill-item-${index}-${j}`} className="whitespace-nowrap">
+                {item}{j < skill.items.length - 1 && <span className="whitespace-normal"> · </span>}
+              </span>
             ))}
-          </ul>
+          </p>
         </div>
       ))}
     </section>

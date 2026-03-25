@@ -1,11 +1,11 @@
 "use client";
 
 import { useRef, useEffect, useState, useMemo, useCallback } from "react";
-import type { Resume } from "./resume.types";
+import type { Resume, SectionTitles } from "./resume.types";
 import { ResumeHeader } from "./components/resume-header";
 import { ResumeBio } from "./components/resume-bio";
 import { ResumeSeparator } from "./components/resume-separator";
-import { ResumeSubtitle } from "./components/resume-subtitle";
+import { EditableSubtitle } from "./components/resume-editable-subtitle";
 import { ResumeExperienceItem } from "./components/resume-experience";
 import { ResumeProjectItem } from "./components/resume-project";
 import { ResumeAvatar } from "./components/resume-avatar";
@@ -13,6 +13,22 @@ import { ResumeContact } from "./components/resume-contact";
 import { ResumeFormation } from "./components/resume-formation";
 import { ResumeSkills } from "./components/resume-skills";
 import { ResumeLanguages } from "./components/resume-languages";
+import { ResumeFacts } from "./components/resume-facts";
+import { useResumeStore } from "./resume.store";
+import { calculateAge } from "./resume.utils";
+
+const DEFAULT_TITLES: Required<SectionTitles> = {
+  contact: "Contact",
+  formation: "Formation",
+  skills: "Skills",
+  languages: "Langues",
+  experiences: "Expériences",
+  projects: "Projets personnels",
+};
+
+function getSectionTitle(sectionTitles: SectionTitles | undefined, key: keyof SectionTitles): string {
+  return sectionTitles?.[key] || DEFAULT_TITLES[key];
+}
 
 // 210mm × 297mm at 96 dpi
 const PAGE_WIDTH = 794;
@@ -64,7 +80,10 @@ interface ContentBlock {
  * Flatten a Resume into an ordered list of individually-measurable blocks.
  * Separator + section title are bundled to prevent orphaned titles at page top.
  */
-function buildBlocks(resume: Resume): ContentBlock[] {
+function buildBlocks(
+  resume: Resume,
+  onSaveTitle: (key: keyof SectionTitles, value: string) => void
+): ContentBlock[] {
   const blocks: ContentBlock[] = [];
 
   blocks.push({
@@ -77,12 +96,22 @@ function buildBlocks(resume: Resume): ContentBlock[] {
     node: <ResumeBio bio={resume.bio} />,
   });
 
+  if (resume.facts && resume.facts.filter(Boolean).length > 0) {
+    blocks.push({
+      id: "facts",
+      node: <ResumeFacts facts={resume.facts} />,
+    });
+  }
+
   blocks.push({
     id: "experiences-heading",
     node: (
       <>
         <ResumeSeparator />
-        <ResumeSubtitle title="Expériences" />
+        <EditableSubtitle
+          title={getSectionTitle(resume.sectionTitles, "experiences")}
+          onSave={(v) => onSaveTitle("experiences", v)}
+        />
       </>
     ),
   });
@@ -97,7 +126,10 @@ function buildBlocks(resume: Resume): ContentBlock[] {
       node: (
         <>
           <ResumeSeparator />
-          <ResumeSubtitle title="Projets personnels" />
+          <EditableSubtitle
+            title={getSectionTitle(resume.sectionTitles, "projects")}
+            onSave={(v) => onSaveTitle("projects", v)}
+          />
         </>
       ),
     });
@@ -152,7 +184,28 @@ function packBlocks(
 // Sidebar
 // ---------------------------------------------------------------------------
 
-function SidebarContent({ resume }: { resume: Resume }) {
+function SidebarContent({
+  resume,
+  onSaveTitle,
+}: {
+  resume: Resume;
+  onSaveTitle: (key: keyof SectionTitles, value: string) => void;
+}) {
+  const { contact } = resume;
+  const age = calculateAge(contact.birthdate);
+  const hasContact = !!(contact.phone || contact.email || contact.location || contact.website || (contact.birthdate && age !== null));
+  const hasFormation = resume.formations.length > 0;
+  const hasSkills = resume.skills.length > 0;
+  const hasLanguages = resume.languages.length > 0;
+
+  const sections = [
+    { key: "contact" as const, visible: hasContact },
+    { key: "formation" as const, visible: hasFormation },
+    { key: "skills" as const, visible: hasSkills },
+    { key: "languages" as const, visible: hasLanguages },
+  ];
+  const visibleSections = sections.filter((s) => s.visible).map((s) => s.key);
+
   return (
     <>
       <ResumeAvatar
@@ -161,13 +214,43 @@ function SidebarContent({ resume }: { resume: Resume }) {
         firstname={resume.contact.firstname}
         lastname={resume.contact.lastname}
       />
-      <ResumeContact contact={resume.contact} />
-      <ResumeSeparator />
-      <ResumeFormation formations={sortFormations(resume.formations)} />
-      <ResumeSeparator />
-      <ResumeSkills skills={resume.skills} />
-      <ResumeSeparator />
-      <ResumeLanguages languages={resume.languages} />
+      {hasContact && (
+        <>
+          <ResumeContact
+            contact={resume.contact}
+            title={getSectionTitle(resume.sectionTitles, "contact")}
+            onSaveTitle={(v) => onSaveTitle("contact", v)}
+          />
+          {visibleSections.indexOf("contact") < visibleSections.length - 1 && <ResumeSeparator />}
+        </>
+      )}
+      {hasFormation && (
+        <>
+          <ResumeFormation
+            formations={sortFormations(resume.formations)}
+            title={getSectionTitle(resume.sectionTitles, "formation")}
+            onSaveTitle={(v) => onSaveTitle("formation", v)}
+          />
+          {visibleSections.indexOf("formation") < visibleSections.length - 1 && <ResumeSeparator />}
+        </>
+      )}
+      {hasSkills && (
+        <>
+          <ResumeSkills
+            skills={resume.skills}
+            title={getSectionTitle(resume.sectionTitles, "skills")}
+            onSaveTitle={(v) => onSaveTitle("skills", v)}
+          />
+          {visibleSections.indexOf("skills") < visibleSections.length - 1 && <ResumeSeparator />}
+        </>
+      )}
+      {hasLanguages && (
+        <ResumeLanguages
+          languages={resume.languages}
+          title={getSectionTitle(resume.sectionTitles, "languages")}
+          onSaveTitle={(v) => onSaveTitle("languages", v)}
+        />
+      )}
     </>
   );
 }
@@ -181,9 +264,10 @@ interface PageProps {
   blocks: ContentBlock[];
   pageIndex: number;
   totalPages: number;
+  onSaveTitle: (key: keyof SectionTitles, value: string) => void;
 }
 
-function Page({ resume, blocks, pageIndex, totalPages }: PageProps) {
+function Page({ resume, blocks, pageIndex, totalPages, onSaveTitle }: PageProps) {
   return (
     <div
       className="relative bg-white shadow-xl overflow-hidden print:shadow-none"
@@ -199,7 +283,7 @@ function Page({ resume, blocks, pageIndex, totalPages }: PageProps) {
         className="absolute inset-y-0 left-0 bg-black/15 font-sans text-xs px-8 py-4 flex flex-col"
         style={{ width: SIDEBAR_WIDTH }}
       >
-        {pageIndex === 0 && <SidebarContent resume={resume} />}
+        {pageIndex === 0 && <SidebarContent resume={resume} onSaveTitle={onSaveTitle} />}
       </div>
 
       {/*
@@ -250,7 +334,18 @@ function Page({ resume, blocks, pageIndex, totalPages }: PageProps) {
 // ---------------------------------------------------------------------------
 
 export function ResumePageBuilder({ resume }: { resume: Resume }) {
-  const blocks = useMemo(() => buildBlocks(resume), [resume]);
+  const patchResume = useResumeStore((s) => s.patchResume);
+
+  const onSaveTitle = useCallback(
+    (key: keyof SectionTitles, value: string) => {
+      patchResume({
+        sectionTitles: { ...resume.sectionTitles, [key]: value },
+      });
+    },
+    [patchResume, resume.sectionTitles]
+  );
+
+  const blocks = useMemo(() => buildBlocks(resume, onSaveTitle), [resume, onSaveTitle]);
   const blockRefs = useRef<Record<string, HTMLDivElement | null>>({});
   const [pages, setPages] = useState<ContentBlock[][]>([]);
 
@@ -303,6 +398,7 @@ export function ResumePageBuilder({ resume }: { resume: Resume }) {
             blocks={pageBlocks}
             pageIndex={i}
             totalPages={pages.length}
+            onSaveTitle={onSaveTitle}
           />
         ))}
       </div>

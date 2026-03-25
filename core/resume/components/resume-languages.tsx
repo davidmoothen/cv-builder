@@ -1,14 +1,16 @@
-import { ResumeSubtitle } from "./resume-subtitle";
+import { EditableSubtitle } from "./resume-editable-subtitle";
 import type { ResumeLanguages } from "../resume.types";
 
 interface ResumeLanguagesProps {
   languages: ResumeLanguages[];
+  title?: string;
+  onSaveTitle?: (value: string) => void;
 }
 
-export function ResumeLanguages({ languages }: ResumeLanguagesProps) {
+export function ResumeLanguages({ languages, title = "Langues", onSaveTitle }: ResumeLanguagesProps) {
   return (
     <section className="break-inside-avoid">
-      <ResumeSubtitle title="Langues" />
+      <EditableSubtitle title={title} onSave={onSaveTitle ?? (() => {})} />
       <ul className="list-none list-inside">
         {languages.map((language, index) => (
           <li key={`language-${index}`}>

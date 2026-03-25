@@ -58,8 +58,18 @@ export interface ResumeProject {
   achievements: string[];
 }
 
+export interface SectionTitles {
+  contact?: string;
+  formation?: string;
+  skills?: string;
+  languages?: string;
+  experiences?: string;
+  projects?: string;
+}
+
 export interface Resume {
   title: string;
+  facts?: string[];
   bio: ResumeBio;
   formations: ResumeFormation[];
   contact: ResumeContact;
@@ -67,4 +77,5 @@ export interface Resume {
   skills: ResumeSkills[];
   languages: ResumeLanguages[];
   projects?: ResumeProject[];
+  sectionTitles?: SectionTitles;
 }

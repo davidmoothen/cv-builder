@@ -6,6 +6,7 @@ import { randomResumes } from "@/core/data/random-resumes"
 import { FormPhoto } from "./components/form-photo"
 import { FormIdentity } from "./components/form-identity"
 import { FormBio } from "./components/form-bio"
+import { FormFacts } from "./components/form-facts"
 import { FormFormation } from "./components/form-formation"
 import { FormSkills } from "./components/form-skills"
 import { FormLanguages } from "./components/form-languages"
@@ -78,6 +79,7 @@ export function EditorPanel() {
           <FormPhoto />
           <FormIdentity />
           <FormBio />
+          <FormFacts />
           <FormFormation />
           <FormSkills />
           <FormLanguages />

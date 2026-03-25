@@ -13,6 +13,7 @@ const emptyResume = {
   skills: [],
   languages: [],
   projects: [],
+  facts: [],
 };
 import type { Resume } from "./resume.types";
 
