@@ -24,15 +24,15 @@ Un éditeur de CV A4 moderne, open source et 100% gratuit. Créez, éditez et ex
 
 ## Stack technique
 
-| Technologie | Rôle |
-|---|---|
-| [Next.js](https://nextjs.org) (App Router) | Framework |
-| [Zustand](https://zustand-demo.pmnd.rs) | State management + persistence localStorage |
-| [React Hook Form](https://react-hook-form.com) | Gestion des formulaires |
-| [Zod](https://zod.dev) | Validation des données |
-| [Tailwind CSS v4](https://tailwindcss.com) | Styles |
-| [Lucide React](https://lucide.dev) | Icônes |
-| [Umami](https://umami.is) | Analytics (auto-hébergé, optionnel) |
+| Technologie                                    | Rôle                                        |
+| ---------------------------------------------- | ------------------------------------------- |
+| [Next.js](https://nextjs.org) (App Router)     | Framework                                   |
+| [Zustand](https://zustand-demo.pmnd.rs)        | State management + persistence localStorage |
+| [React Hook Form](https://react-hook-form.com) | Gestion des formulaires                     |
+| [Zod](https://zod.dev)                         | Validation des données                      |
+| [Tailwind CSS v4](https://tailwindcss.com)     | Styles                                      |
+| [Lucide React](https://lucide.dev)             | Icônes                                      |
+| [Umami](https://umami.is)                      | Analytics (auto-hébergé, optionnel)         |
 
 ## Installation locale
 
@@ -49,11 +49,11 @@ Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur.
 
 ## Variables d'environnement
 
-| Variable | Description | Obligatoire | Défaut |
-|---|---|---|---|
-| `NEXT_PUBLIC_APP_URL` | URL publique de l'application | Oui | `http://localhost:3000` |
-| `NEXT_PUBLIC_UMAMI_URL` | URL de votre instance Umami | Non | — |
-| `NEXT_PUBLIC_UMAMI_WEBSITE_ID` | ID du site dans Umami | Non | — |
+| Variable                       | Description                   | Obligatoire | Défaut                  |
+| ------------------------------ | ----------------------------- | ----------- | ----------------------- |
+| `NEXT_PUBLIC_APP_URL`          | URL publique de l'application | Oui         | `http://localhost:3000` |
+| `NEXT_PUBLIC_UMAMI_URL`        | URL de votre instance Umami   | Non         | —                       |
+| `NEXT_PUBLIC_UMAMI_WEBSITE_ID` | ID du site dans Umami         | Non         | —                       |
 
 > Les variables Umami sont optionnelles. Sans elles, l'analytics est simplement désactivé. Le script ne se charge jamais en développement (`NODE_ENV=development`).
 
@@ -66,7 +66,7 @@ Le projet est déployable en quelques clics sur :
 
 ## Auteur
 
-**David Moothen** — Fractional CTO & Lead Tech
+**David Moothen** — Fractional CTO & Product Builder
 🔗 [jinio.us](https://jinio.us)
 
 ## Licence
@@ -107,11 +107,11 @@ npm run dev
 
 ### Environment variables
 
-| Variable | Description | Required | Default |
-|---|---|---|---|
-| `NEXT_PUBLIC_APP_URL` | Public URL of the application | Yes | `http://localhost:3000` |
-| `NEXT_PUBLIC_UMAMI_URL` | Your Umami instance URL | No | — |
-| `NEXT_PUBLIC_UMAMI_WEBSITE_ID` | Umami website ID | No | — |
+| Variable                       | Description                   | Required | Default                 |
+| ------------------------------ | ----------------------------- | -------- | ----------------------- |
+| `NEXT_PUBLIC_APP_URL`          | Public URL of the application | Yes      | `http://localhost:3000` |
+| `NEXT_PUBLIC_UMAMI_URL`        | Your Umami instance URL       | No       | —                       |
+| `NEXT_PUBLIC_UMAMI_WEBSITE_ID` | Umami website ID              | No       | —                       |
 
 ### Deployment
 
@@ -119,7 +119,7 @@ Deploy in a few clicks on **Vercel** or any VPS running **Coolify**.
 
 ### Author
 
-**David Moothen** — Fractional CTO & Lead Tech · [jinio.us](https://jinio.us)
+**David Moothen** — Fractional CTO & Product Builder · [jinio.us](https://jinio.us)
 
 ### License
 
