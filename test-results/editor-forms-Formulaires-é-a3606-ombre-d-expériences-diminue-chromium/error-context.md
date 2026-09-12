@@ -591,7 +591,7 @@
                     - text: Un projet open source de
                     - link "David Moothen" [ref=e603] [cursor=pointer]:
                         - /url: https://jinio.us
-                    - text: · Fractional CTO & Product Builder
+                    - text: · Développeur Fullstack Senior React/Node.js · SaaS
                 - generic [ref=e604]:
                     - link "GitHub" [ref=e605] [cursor=pointer]:
                         - /url: https://github.com/davidmoothen/cv-builder

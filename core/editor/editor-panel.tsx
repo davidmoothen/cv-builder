@@ -19,7 +19,7 @@ import type { Resume } from "@/core/resume"
 
 export function EditorPanel() {
   const { resetResume, loadResume, isDirty } = useResumeStore()
-  const [resetKey, setResetKey] = useState(0)
+  const formVersion = useResumeStore(s => s.formVersion)
   const [pendingAction, setPendingAction] = useState<(() => void) | null>(null)
   const { track } = useTracking()
 
@@ -34,12 +34,10 @@ export function EditorPanel() {
   const handleReset = () => confirmAction(() => {
     track("cv-reset")
     resetResume()
-    setResetKey(k => k + 1)
   })
 
   const handleLoadResume = (resume: Resume) => confirmAction(() => {
     loadResume(resume)
-    setResetKey(k => k + 1)
   })
 
   const handleJobSelect = (resume: Resume) => {
@@ -75,7 +73,7 @@ export function EditorPanel() {
         </div>
 
         {/* Forms — remount on reset via key */}
-        <div key={resetKey} className="flex-1">
+        <div key={formVersion} className="flex-1">
           <FormPhoto />
           <FormIdentity />
           <FormBio />

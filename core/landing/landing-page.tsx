@@ -19,22 +19,26 @@ const FEATURES = [
   {
     icon: ZapIcon,
     title: "100% gratuit",
-    description: "Aucun abonnement, aucun compte requis. Utilisez-le immédiatement.",
+    description:
+      "Aucun abonnement, aucun compte requis. Utilisez-le immédiatement.",
   },
   {
     icon: CodeIcon,
     title: "Open source",
-    description: "Code source disponible sur GitHub. Forkez, adaptez, contribuez.",
+    description:
+      "Code source disponible sur GitHub. Forkez, adaptez, contribuez.",
   },
   {
     icon: DownloadIcon,
     title: "Export PDF",
-    description: "Imprimez ou exportez en PDF directement depuis votre navigateur.",
+    description:
+      "Imprimez ou exportez en PDF directement depuis votre navigateur.",
   },
   {
     icon: LockIcon,
     title: "Données locales",
-    description: "Vos données restent sur votre appareil. Rien n'est envoyé à un serveur.",
+    description:
+      "Vos données restent sur votre appareil. Rien n'est envoyé à un serveur.",
   },
 ] as const;
 
@@ -68,7 +72,8 @@ function Hero() {
           >
             {APP_CONFIG.author.name}
           </a>
-          {" "}· {APP_CONFIG.author.title}
+          <br />
+          {APP_CONFIG.author.title}
         </p>
         <div className="flex items-center justify-center gap-4 flex-wrap">
           <CtaButton
@@ -112,7 +117,9 @@ function Features() {
                 <Icon className="w-4 h-4 text-white" />
               </div>
               <h3 className="font-semibold text-gray-900 text-sm">{title}</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">{description}</p>
+              <p className="text-sm text-gray-500 leading-relaxed">
+                {description}
+              </p>
             </div>
           ))}
         </div>
@@ -129,8 +136,8 @@ function Demo() {
           Prêt à créer votre CV ?
         </h2>
         <p className="text-gray-500 mb-8 leading-relaxed">
-          Remplissez vos informations dans le panneau de droite et votre CV
-          se met à jour en temps réel. Imprimez ou exportez en PDF en un clic.
+          Remplissez vos informations dans le panneau de droite et votre CV se
+          met à jour en temps réel. Imprimez ou exportez en PDF en un clic.
         </p>
         <CtaButton
           className="inline-flex items-center bg-gray-900 text-white

@@ -16,6 +16,7 @@ Un éditeur de CV A4 moderne, open source et 100% gratuit. Créez, éditez et ex
 
 - ✅ Édition en temps réel avec prévisualisation A4
 - ✅ Export PDF via impression navigateur
+- ✅ Import / export du CV au format JSON — gardez plusieurs CV sous forme de fichiers
 - ✅ Sauvegarde automatique en localStorage (aucun serveur)
 - ✅ 30 CVs exemples par métier
 - ✅ Pagination automatique multi-pages
@@ -66,7 +67,7 @@ Le projet est déployable en quelques clics sur :
 
 ## Auteur
 
-**David Moothen** — Fractional CTO & Product Builder
+**David Moothen** — Développeur Fullstack Senior React/Node.js · SaaS
 🔗 [jinio.us](https://jinio.us)
 
 ## Licence
@@ -85,6 +86,7 @@ A modern, open source, 100% free A4 CV/resume editor. Create, edit and export yo
 
 - ✅ Real-time editor with A4 preview
 - ✅ PDF export via browser print
+- ✅ JSON import / export — keep multiple resumes as files
 - ✅ Auto-save to localStorage (no server)
 - ✅ 30 example CVs by profession
 - ✅ Automatic multi-page pagination
@@ -119,7 +121,7 @@ Deploy in a few clicks on **Vercel** or any VPS running **Coolify**.
 
 ### Author
 
-**David Moothen** — Fractional CTO & Product Builder · [jinio.us](https://jinio.us)
+**David Moothen** — Développeur Fullstack Senior React/Node.js · SaaS · [jinio.us](https://jinio.us)
 
 ### License
 

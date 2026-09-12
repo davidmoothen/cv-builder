@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import { ChevronRightIcon } from "lucide-react";
 import { ResumeView } from "@/core/resume";
 import { Footer } from "@/core/components/footer";
@@ -8,11 +8,20 @@ import { EditorNavbar } from "./editor-navbar";
 import { EditorPanel } from "./editor-panel";
 
 const PANEL_WIDTH = 390;
+/** No-op subscription: the "has mounted" flag never changes after hydration. */
+const subscribeNoop = () => () => {};
 // Delay print until the panel close animation finishes
 const ANIMATION_DURATION_MS = 320;
 
 export function EditorLayout() {
   const [isOpen, setIsOpen] = useState(true);
+  /*
+   * The resume lives in localStorage (zustand persist), so the server can only
+   * ever render the default CV. Rendering the store-backed subtrees before mount
+   * makes the client markup disagree with the server's and React throws the whole
+   * tree away — which is what left the editor blank. Mount them client-side only.
+   */
+  const isMounted = useSyncExternalStore(subscribeNoop, () => true, () => false);
 
   const handlePrint = () => {
     if (isOpen) {
@@ -40,7 +49,7 @@ export function EditorLayout() {
 
         {/* ── Left: preview area ──────────────────────────────────────────── */}
         <div className="flex-1 min-w-0 overflow-auto bg-gray-200 print:overflow-visible print:bg-white">
-          <ResumeView />
+          {isMounted && <ResumeView />}
         </div>
 
         {/* ── Desktop panel: hidden at print ──────────────────────────────── */}
@@ -54,7 +63,7 @@ export function EditorLayout() {
             className="h-full overflow-y-auto bg-white border-l border-gray-200"
             style={{ width: PANEL_WIDTH }}
           >
-            <EditorPanel />
+            {isMounted && <EditorPanel />}
           </div>
         </div>
 
@@ -69,7 +78,7 @@ export function EditorLayout() {
             transform: isOpen ? "translateX(0)" : `translateX(${PANEL_WIDTH}px)`,
           }}
         >
-          <EditorPanel />
+          {isMounted && <EditorPanel />}
         </div>
       </div>
 

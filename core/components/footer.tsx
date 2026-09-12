@@ -17,13 +17,19 @@ export function Footer() {
             Next.js
           </a>
         </span>
-        <span className="text-gray-400">
+        <p className="text-gray-400 text-center">
           Un projet open source de{" "}
-          <a href={APP_CONFIG.author.url} target="_blank" rel="noopener noreferrer" className="hover:text-gray-700 transition-colors">
+          <a
+            href={APP_CONFIG.author.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-gray-700 transition-colors"
+          >
             {APP_CONFIG.author.name}
           </a>
-          {" "}· {APP_CONFIG.author.title}
-        </span>
+          <br />
+          {APP_CONFIG.author.title}
+        </p>
         <div className="flex items-center gap-5">
           <a
             href={APP_CONFIG.github}

@@ -1,0 +1,64 @@
+import { buildResumeFile, parseResumeFile, resumeFileName, RESUME_FILE_VERSION } from "./resume-io"
+import { defaultResume } from "@/core/data/default-resume"
+import type { Resume } from "@/core/resume/resume.types"
+
+describe("buildResumeFile", () => {
+  it("enveloppe le CV avec une version et une date d'export", () => {
+    const file = buildResumeFile(defaultResume)
+    expect(file.version).toBe(RESUME_FILE_VERSION)
+    expect(new Date(file.exportedAt).toString()).not.toBe("Invalid Date")
+    expect(file.resume).toEqual(defaultResume)
+  })
+})
+
+describe("parseResumeFile", () => {
+  it("fait un aller-retour fidèle avec buildResumeFile", () => {
+    const text = JSON.stringify(buildResumeFile(defaultResume), null, 2)
+    expect(parseResumeFile(text)).toEqual(defaultResume)
+  })
+
+  it("accepte un objet Resume nu, sans enveloppe", () => {
+    expect(parseResumeFile(JSON.stringify(defaultResume))).toEqual(defaultResume)
+  })
+
+  it("conserve la photo uploadée en base64", () => {
+    const withPhoto: Resume = {
+      ...defaultResume,
+      contact: { ...defaultResume.contact, photoBase64: "data:image/jpeg;base64,AAAA" },
+    }
+    const parsed = parseResumeFile(JSON.stringify(buildResumeFile(withPhoto)))
+    expect(parsed.contact.photoBase64).toBe("data:image/jpeg;base64,AAAA")
+  })
+
+  it("rejette un fichier qui n'est pas du JSON", () => {
+    expect(() => parseResumeFile("pas du json {{{")).toThrow(/JSON valide/)
+  })
+
+  it("rejette un JSON valide mais non conforme", () => {
+    expect(() => parseResumeFile(JSON.stringify({ foo: 1 }))).toThrow(/CV valide/)
+  })
+
+  it("rejette une enveloppe dont le CV est incomplet", () => {
+    const broken = { version: 1, exportedAt: "2026-01-01", resume: { title: "Dev" } }
+    expect(() => parseResumeFile(JSON.stringify(broken))).toThrow(/CV valide/)
+  })
+})
+
+describe("resumeFileName", () => {
+  const contactWith = (firstname: string, lastname: string): Resume => ({
+    ...defaultResume,
+    contact: { ...defaultResume.contact, firstname, lastname },
+  })
+
+  it("construit un nom de fichier à partir du prénom et du nom", () => {
+    expect(resumeFileName(contactWith("Jean", "Dupont"))).toBe("cv-jean-dupont.json")
+  })
+
+  it("retire les accents et les caractères spéciaux", () => {
+    expect(resumeFileName(contactWith("Élise", "Lefèvre-Ruiz"))).toBe("cv-elise-lefevre-ruiz.json")
+  })
+
+  it("retombe sur cv.json quand le contact n'a pas de nom", () => {
+    expect(resumeFileName(contactWith("", ""))).toBe("cv.json")
+  })
+})
