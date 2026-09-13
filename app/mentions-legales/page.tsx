@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { APP_CONFIG } from "@/core/config/app";
 
 export const metadata: Metadata = {
-  title: "Mentions légales — CV Builder",
+  title: "Mentions légales - CV Builder",
 };
 
 export default function MentionsLegalesPage() {
@@ -32,7 +32,7 @@ export default function MentionsLegalesPage() {
             <h2 className="text-xs font-semibold uppercase tracking-widest text-gray-400 mb-3">
               Éditeur du site
             </h2>
-            <p>{APP_CONFIG.author.name} — {APP_CONFIG.author.title}</p>
+            <p>{APP_CONFIG.author.name} - {APP_CONFIG.author.title}</p>
             <p>SIREN : [à compléter]</p>
             <p>
               Contact :{" "}

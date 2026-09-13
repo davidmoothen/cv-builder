@@ -12,7 +12,7 @@ export const resume: Resume = {
   },
   bio: {
     sentences: [
-      "Je conçois et industrialise des produits digitaux de A à Z — de l'architecture à la mise en production.",
+      "Je conçois et industrialise des produits digitaux de A à Z - de l'architecture à la mise en production.",
       "J'interviens comme Fractional CTO ou Lead Tech Full Stack pour des startups et PME qui veulent aller vite sans sacrifier la qualité, et je développe en parallèle mes propres SaaS.",
     ],
     skills: [],
@@ -27,7 +27,7 @@ export const resume: Resume = {
   experiences: [
     {
       job: "Lead Developer Full Stack · Lead Tech",
-      company: "Freelance — SASU (ex auto-entrepreneur)",
+      company: "Freelance - SASU (ex auto-entrepreneur)",
       date: "juin 2022 → aujourd'hui",
       current: true,
       description:
@@ -46,7 +46,7 @@ export const resume: Resume = {
           achievements: {
             title: "Réalisations",
             items: [
-              "Architecture SaaS scalable — Next.js / Node.js / PostgreSQL / Stripe",
+              "Architecture SaaS scalable - Next.js / Node.js / PostgreSQL / Stripe",
               "Abonnement récurrent, upload sécurisé, flux XML, email automation",
               "75 000+ utilisateurs cumulés",
               "Encadrement d'un alternant",

@@ -14,7 +14,7 @@ export function ResumeLanguages({ languages, title = "Langues", onSaveTitle }: R
       <ul className="list-none list-inside">
         {languages.map((language, index) => (
           <li key={`language-${index}`}>
-            {language.language} — {language.level}
+            {language.language} - {language.level}
           </li>
         ))}
       </ul>

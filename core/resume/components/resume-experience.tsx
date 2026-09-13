@@ -1,23 +1,31 @@
 import { ResumeClientItem } from "./resume-client";
 import type { ResumeExperience } from "../resume.types";
+import { getDuration } from "../resume.utils";
 
 interface ResumeExperienceProps {
   experience: ResumeExperience;
 }
 
 export function ResumeExperienceItem({ experience }: ResumeExperienceProps) {
+  const duration = getDuration(experience.date, experience.current);
+
   return (
     <div className="grid gap-2 mb-4 break-inside-avoid">
       <div>
+        <div className="flex items-center justify-between">
+          <span className="font-bold">{experience.job} </span>
+          <span className="text-black/50">
+            {`${experience.date}`}
+            {experience.current ? " - aujourd'hui" : ""}
+            {duration ? ` · ${duration}` : ""}
+          </span>
+        </div>
         <div>
-          <span className="font-bold">{experience.job}</span>
           {experience.company && (
-            <span className="text-black/50"> — {experience.company}</span>
+            <p className="text-black/60 italic">{experience.company}</p>
           )}
         </div>
-        <p className="text-black/60 italic">
-          {experience.date}{experience.current ? " - aujourd'hui" : ""}
-        </p>
+        <div className="flex items-center justify-between"></div>
       </div>
       <p>{experience.description}</p>
       {experience.achievements.items.length > 0 && (

@@ -13,7 +13,7 @@ export const defaultResume: Resume = {
   },
   bio: {
     sentences: [
-      "Je conçois et industrialise des produits digitaux de A à Z — de l'architecture à la mise en production.",
+      "Je conçois et industrialise des produits digitaux de A à Z - de l'architecture à la mise en production.",
       "J'interviens comme Lead Tech Full Stack pour des startups et PME qui veulent aller vite sans sacrifier la qualité.",
     ],
     skills: [],
@@ -21,7 +21,7 @@ export const defaultResume: Resume = {
   formations: [
     {
       date: "2015",
-      school: "Université Paris — Informatique",
+      school: "Université Paris - Informatique",
       title: "Master 2 Génie Logiciel",
     },
   ],
@@ -36,7 +36,7 @@ export const defaultResume: Resume = {
       achievements: {
         title: "Réalisations",
         items: [
-          "Architecture SaaS scalable — Next.js / Node.js / PostgreSQL",
+          "Architecture SaaS scalable - Next.js / Node.js / PostgreSQL",
           "Abonnement récurrent, upload sécurisé, email automation",
           "50 000+ utilisateurs cumulés",
         ],
