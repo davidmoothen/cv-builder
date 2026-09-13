@@ -8,15 +8,24 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-noto: var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-raleway: var(--font-raleway-family), ui-sans-serif, system-ui, sans-serif;
+}
+
+/*
+ * Polices par rôle, volontairement SANS `inline` : les utilitaires doivent
+ * référencer var(--font-*) et non sa valeur, pour qu'une surcharge posée sur
+ * la racine du CV (groupe de polices) cascade à tout le sous-arbre.
+ * Les valeurs ci-dessous sont le groupe « classique » par défaut.
+ */
+@theme {
+  --font-text: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-title: var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-header: var(--font-raleway-family), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
+  font-family: var(--font-text);
 }
 
 @media print {

@@ -30,6 +30,46 @@ describe("parseResumeFile", () => {
     expect(parsed.contact.photoBase64).toBe("data:image/jpeg;base64,AAAA")
   })
 
+  it("conserve les couleurs du thème", () => {
+    const theme = {
+      sidebarBg: "#1F2937",
+      sidebarText: "#FFFFFF",
+      headerBg: "#2D3B2F",
+      headerText: "#F5F5F5",
+    }
+    const themed: Resume = { ...defaultResume, theme }
+    const parsed = parseResumeFile(JSON.stringify(buildResumeFile(themed)))
+    expect(parsed.theme).toEqual(theme)
+  })
+
+  it("conserve le groupe de polices", () => {
+    const themed: Resume = { ...defaultResume, theme: { fontGroup: "elegant" } }
+    const parsed = parseResumeFile(JSON.stringify(buildResumeFile(themed)))
+    expect(parsed.theme?.fontGroup).toBe("elegant")
+  })
+
+  it("accepte un groupe de polices inconnu (c'est getFontGroup qui corrige)", () => {
+    const themed: Resume = { ...defaultResume, theme: { fontGroup: "inexistant" } }
+    expect(() => parseResumeFile(JSON.stringify(themed))).not.toThrow()
+  })
+
+  it("accepte un thème partiel (couleur ajoutée après l'export)", () => {
+    const partial: Resume = { ...defaultResume, theme: { sidebarBg: "#1F2937" } }
+    const parsed = parseResumeFile(JSON.stringify(partial))
+    expect(parsed.theme).toEqual({ sidebarBg: "#1F2937" })
+  })
+
+  it("accepte un CV sans thème (fichiers exportés avant la feature)", () => {
+    const legacy = JSON.parse(JSON.stringify(defaultResume))
+    delete legacy.theme
+    expect(parseResumeFile(JSON.stringify(legacy)).theme).toBeUndefined()
+  })
+
+  it("rejette un thème dont les couleurs ne sont pas des hex #RRGGBB", () => {
+    const broken = { ...defaultResume, theme: { sidebarBg: "red", headerBg: "#GGGGGG" } }
+    expect(() => parseResumeFile(JSON.stringify(broken))).toThrow(/CV valide/)
+  })
+
   it("rejette un fichier qui n'est pas du JSON", () => {
     expect(() => parseResumeFile("pas du json {{{")).toThrow(/JSON valide/)
   })

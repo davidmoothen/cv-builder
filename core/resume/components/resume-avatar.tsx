@@ -28,7 +28,7 @@ export function ResumeAvatar({ photoUrl, photoBase64, firstname, lastname }: Res
 
   return (
     <div className="mx-auto w-[90%] aspect-square rounded-full border-5 border-white/30 overflow-hidden mb-4 bg-gray-700 flex items-center justify-center">
-      <span className="font-raleway font-light text-white text-2xl tracking-widest">
+      <span className="font-header font-light text-white text-2xl tracking-widest">
         {initials || "?"}
       </span>
     </div>

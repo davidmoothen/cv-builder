@@ -40,7 +40,7 @@ export function EditableSubtitle({ title, onSave }: EditableSubtitleProps) {
           value={value}
           onChange={(e) => setValue(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="text-sm font-bold font-noto tracking-widest uppercase border-b border-black/40 bg-transparent outline-none flex-1 min-w-0"
+          className="text-sm font-bold font-title tracking-widest uppercase border-b border-current/40 bg-transparent outline-none flex-1 min-w-0"
         />
         <button
           onClick={handleConfirm}
@@ -62,12 +62,12 @@ export function EditableSubtitle({ title, onSave }: EditableSubtitleProps) {
 
   return (
     <div className="flex items-center gap-1 mb-4 group/subtitle cursor-pointer" onClick={handleEdit}>
-      <h2 className="text-sm font-bold font-noto tracking-widest uppercase">
+      <h2 className="text-sm font-bold font-title tracking-widest uppercase">
         {title}
       </h2>
       <button
         onClick={handleEdit}
-        className="p-0.5 text-black/30 hover:text-black/60 opacity-0 group-hover/subtitle:opacity-100 transition-opacity print:hidden shrink-0 cursor-pointer"
+        className="p-0.5 text-current/40 hover:text-current/70 opacity-0 group-hover/subtitle:opacity-100 transition-opacity print:hidden shrink-0 cursor-pointer"
         title="Modifier le titre"
       >
         <PencilIcon className="w-3 h-3" />

@@ -53,7 +53,7 @@ function Hero() {
         <span className="inline-block text-xs font-semibold uppercase tracking-widest text-gray-400 mb-6">
           Open Source · Gratuit · Sans inscription
         </span>
-        <h1 className="text-5xl font-raleway font-light tracking-tight text-gray-900 mb-6 leading-tight">
+        <h1 className="text-5xl font-header font-light tracking-tight text-gray-900 mb-6 leading-tight">
           Créez un CV professionnel
           <br />
           <span className="font-normal">en quelques minutes.</span>
@@ -132,7 +132,7 @@ function Demo() {
   return (
     <section className="py-24 px-6">
       <div className="max-w-xl mx-auto text-center">
-        <h2 className="text-3xl font-raleway font-light text-gray-900 mb-4">
+        <h2 className="text-3xl font-header font-light text-gray-900 mb-4">
           Prêt à créer votre CV ?
         </h2>
         <p className="text-gray-500 mb-8 leading-relaxed">

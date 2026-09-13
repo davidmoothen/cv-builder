@@ -60,7 +60,7 @@ export function EditorLayout() {
           style={{ width: isOpen ? PANEL_WIDTH : 0 }}
         >
           <div
-            className="h-full overflow-y-auto bg-white border-l border-gray-200"
+            className="h-full overflow-hidden bg-white border-l border-gray-200"
             style={{ width: PANEL_WIDTH }}
           >
             {isMounted && <EditorPanel />}
@@ -70,7 +70,7 @@ export function EditorLayout() {
         {/* ── Mobile panel: hidden at print ───────────────────────────────── */}
         <div
           className="lg:hidden fixed inset-y-0 right-0 z-40
-                     bg-white border-l border-gray-200 overflow-y-auto
+                     bg-white border-l border-gray-200 overflow-hidden
                      transition-transform duration-300 ease-in-out
                      print:hidden"
           style={{

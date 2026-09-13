@@ -1,21 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans, Raleway } from "next/font/google";
+import { fontVariables } from "./fonts";
 import "./globals.css";
-
-const fontInter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const fontNoto = Noto_Sans({
-  variable: "--font-noto-sans",
-  subsets: ["latin"],
-});
-
-const fontRaleway = Raleway({
-  variable: "--font-raleway-family",
-  subsets: ["latin"],
-});
 
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 
@@ -59,7 +44,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="light" style={{ colorScheme: "light" }}>
+    /*
+     * fontVariables est posé sur <html> et non sur <body> : les variables de rôle
+     * (--font-text…) sont déclarées par Tailwind sur :root et référencent
+     * var(--font-inter). Si --font-inter n'était défini que sur <body>, la
+     * référence serait indéfinie sur :root et la propriété deviendrait invalide
+     * (donc vide) pour toute la page.
+     */
+    <html lang="en" data-theme="light" className={fontVariables} style={{ colorScheme: "light" }}>
       {process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
         // eslint-disable-next-line @next/next/no-before-interactive-script-outside-document
         <script
@@ -68,7 +60,7 @@ export default function RootLayout({
           data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
         />
       )}
-      <body className={`${fontInter.variable} ${fontNoto.variable} ${fontRaleway.variable} antialiased`}>
+      <body className="antialiased">
         {children}
       </body>
     </html>

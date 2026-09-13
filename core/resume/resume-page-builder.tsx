@@ -15,6 +15,8 @@ import { ResumeSkills } from "./components/resume-skills";
 import { ResumeLanguages } from "./components/resume-languages";
 import { ResumeFacts } from "./components/resume-facts";
 import { useResumeStore } from "./resume.store";
+import { getTheme } from "./resume.theme";
+import { getFontGroup } from "./resume.fonts";
 import { calculateAge } from "./resume.utils";
 
 const DEFAULT_TITLES: Required<SectionTitles> = {
@@ -88,7 +90,7 @@ function buildBlocks(
 
   blocks.push({
     id: "header",
-    node: <ResumeHeader contact={resume.contact} title={resume.title} />,
+    node: <ResumeHeader contact={resume.contact} title={resume.title} theme={getTheme(resume)} />,
   });
 
   blocks.push({
@@ -268,6 +270,8 @@ interface PageProps {
 }
 
 function Page({ resume, blocks, pageIndex, totalPages, onSaveTitle }: PageProps) {
+  const theme = getTheme(resume);
+
   return (
     <div
       className="relative bg-white shadow-xl overflow-hidden print:shadow-none"
@@ -278,10 +282,18 @@ function Page({ resume, blocks, pageIndex, totalPages, onSaveTitle }: PageProps)
         breakAfter: pageIndex < totalPages - 1 ? "page" : "auto",
       }}
     >
-      {/* Sidebar: full content on page 1, empty gray background on subsequent pages */}
+      {/*
+       * Sidebar: full content on page 1, empty colored band on subsequent pages.
+       * Colors come from the theme and are applied on every page so the band
+       * stays consistent; `color` overrides the page-level black for this column.
+       */}
       <div
-        className="absolute inset-y-0 left-0 bg-black/15 font-sans text-xs px-8 py-4 flex flex-col"
-        style={{ width: SIDEBAR_WIDTH }}
+        className="absolute inset-y-0 left-0 font-text text-xs px-8 py-4 flex flex-col"
+        style={{
+          width: SIDEBAR_WIDTH,
+          backgroundColor: theme.sidebarBg,
+          color: theme.sidebarText,
+        }}
       >
         {pageIndex === 0 && <SidebarContent resume={resume} onSaveTitle={onSaveTitle} />}
       </div>
@@ -293,7 +305,7 @@ function Page({ resume, blocks, pageIndex, totalPages, onSaveTitle }: PageProps)
        * ResumeHeader uses -mx-8 to bleed edge-to-edge within this container.
        */}
       <div
-        className="font-sans text-xs px-8 overflow-hidden"
+        className="font-text text-xs px-8 overflow-hidden"
         style={{
           marginLeft: SIDEBAR_WIDTH,
           height: PAGE_HEIGHT,
@@ -303,7 +315,7 @@ function Page({ resume, blocks, pageIndex, totalPages, onSaveTitle }: PageProps)
       >
         {pageIndex > 0 && (
           <div className="flex items-baseline justify-between mb-4 pb-2 border-b border-black/15">
-            <span className="font-raleway font-light uppercase tracking-widest text-[10px] text-black/60">
+            <span className="font-header font-light uppercase tracking-widest text-[10px] text-black/60">
               {resume.contact.firstname} {resume.contact.lastname}
             </span>
             <span className="text-[10px] text-black/40">
@@ -364,15 +376,32 @@ export function ResumePageBuilder({ resume }: { resume: Resume }) {
     document.fonts.ready.then(() => requestAnimationFrame(measure));
   }, [measure]);
 
+  const fonts = getFontGroup(getTheme(resume).fontGroup);
+
   return (
-    <>
+    /*
+     * Font scope. Must wrap BOTH the ghost and the pages: the ghost measures
+     * block heights for pagination, so a font mismatch between the two would
+     * make every measurement wrong. `display: contents` generates no box, so
+     * this wrapper has zero effect on the surrounding layout.
+     */
+    <div
+      style={
+        {
+          display: "contents",
+          "--font-header": fonts.header,
+          "--font-title": fonts.title,
+          "--font-text": fonts.text,
+        } as React.CSSProperties
+      }
+    >
       {/*
-       * Ghost container: same font-sans text-xs px-8 as the page main column.
+       * Ghost container: same font-text text-xs px-8 as the page main column.
        * display:flow-root on each block wrapper (BFC) matches the page render exactly.
        * Fixed off-screen so it never affects layout or scroll.
        */}
       <div
-        className="fixed font-sans text-xs px-8 pointer-events-none opacity-0"
+        className="fixed font-text text-xs px-8 pointer-events-none opacity-0"
         style={{ top: -9999, left: -9999, width: MAIN_WIDTH }}
         aria-hidden="true"
       >
@@ -402,6 +431,6 @@ export function ResumePageBuilder({ resume }: { resume: Resume }) {
           />
         ))}
       </div>
-    </>
+    </div>
   );
 }

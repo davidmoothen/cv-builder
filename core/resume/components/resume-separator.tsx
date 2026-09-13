@@ -5,5 +5,5 @@ interface ResumeSeparatorProps {
 }
 
 export function ResumeSeparator({ className }: ResumeSeparatorProps) {
-  return <div className={twMerge("h-px bg-black w-full my-4", className)} />;
+  return <div className={twMerge("h-px bg-current w-full my-4", className)} />;
 }

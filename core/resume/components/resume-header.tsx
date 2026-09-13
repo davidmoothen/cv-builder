@@ -1,22 +1,26 @@
 import { ResumeSeparator } from "./resume-separator";
-import type { ResumeContact } from "../resume.types";
+import type { ResolvedTheme, ResumeContact } from "../resume.types";
 
 interface ResumeHeaderProps {
   contact: ResumeContact;
   title: string;
+  theme: ResolvedTheme;
 }
 
-export function ResumeHeader({ contact, title }: ResumeHeaderProps) {
+export function ResumeHeader({ contact, title, theme }: ResumeHeaderProps) {
   return (
-    <header className="bg-black/80 text-white -mx-8 px-8 py-8 flex items-center justify-center mb-8 break-inside-avoid break-after-avoid">
+    <header
+      className="-mx-8 px-8 py-8 flex items-center justify-center mb-8 break-inside-avoid break-after-avoid"
+      style={{ backgroundColor: theme.headerBg, color: theme.headerText }}
+    >
       <div className="text-center grid gap-4">
-        <h1 className="text-4xl uppercase font-raleway font-light tracking-widest">
+        <h1 className="text-4xl uppercase font-header font-light tracking-widest">
           {contact.firstname}
           <br />
           {contact.lastname}
         </h1>
-        <ResumeSeparator className="bg-white max-w-[50px] mx-auto" />
-        <p className="font-raleway font-light uppercase tracking-widest">
+        <ResumeSeparator className="max-w-[50px] mx-auto" />
+        <p className="font-header font-light uppercase tracking-widest">
           {title}
         </p>
       </div>

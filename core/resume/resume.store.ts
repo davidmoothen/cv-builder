@@ -3,6 +3,7 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { defaultResume } from "@/core/data/default-resume";
+import { DEFAULT_THEME } from "./resume.theme";
 
 const emptyResume = {
   title: "",
@@ -14,6 +15,7 @@ const emptyResume = {
   languages: [],
   projects: [],
   facts: [],
+  theme: DEFAULT_THEME,
 };
 import type { Resume } from "./resume.types";
 

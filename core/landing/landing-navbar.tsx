@@ -6,7 +6,7 @@ export function LandingNavbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm border-b border-gray-100">
       <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
-        <span className="font-raleway font-light uppercase tracking-widest text-sm text-gray-900">
+        <span className="font-header font-light uppercase tracking-widest text-sm text-gray-900">
           {APP_CONFIG.appName}
         </span>
 

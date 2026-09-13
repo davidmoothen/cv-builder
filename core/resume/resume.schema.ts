@@ -75,6 +75,19 @@ export const sectionTitlesSchema = z.object({
   projects: z.string().optional(),
 });
 
+const hexColorSchema = z.string().regex(/^#[0-9a-fA-F]{6}$/);
+
+export const resumeThemeSchema = z.object({
+  sidebarBg: hexColorSchema.optional(),
+  sidebarText: hexColorSchema.optional(),
+  headerBg: hexColorSchema.optional(),
+  headerText: hexColorSchema.optional(),
+  // Volontairement permissif plutôt qu'un z.enum des ids connus : un groupe
+  // inconnu doit retomber sur le défaut via getFontGroup(), pas faire échouer
+  // l'import de tout le CV.
+  fontGroup: z.string().optional(),
+});
+
 export const resumeSchema = z.object({
   title: z.string(),
   facts: z.array(z.string()).optional(),
@@ -86,6 +99,7 @@ export const resumeSchema = z.object({
   languages: z.array(resumeLanguagesSchema),
   projects: z.array(resumeProjectSchema).optional(),
   sectionTitles: sectionTitlesSchema.optional(),
+  theme: resumeThemeSchema.optional(),
 });
 
 // Compile-time lock: fails the build if the schema and the Resume type diverge.

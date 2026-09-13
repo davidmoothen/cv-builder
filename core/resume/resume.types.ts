@@ -67,6 +67,27 @@ export interface SectionTitles {
   projects?: string;
 }
 
+/**
+ * Thème du document, en #RRGGBB. Chaque couleur est optionnelle : un CV exporté
+ * avant l'ajout d'une couleur doit rester importable, et `getTheme()` complète
+ * les manquantes avec les valeurs par défaut.
+ */
+export interface ResumeTheme {
+  /** Fond de la colonne de gauche. */
+  sidebarBg?: string;
+  /** Texte de la colonne de gauche. */
+  sidebarText?: string;
+  /** Fond du bandeau nom / titre. */
+  headerBg?: string;
+  /** Texte du bandeau nom / titre. */
+  headerText?: string;
+  /** Id d'un groupe de `FONT_GROUPS` (core/resume/resume.fonts.ts). */
+  fontGroup?: string;
+}
+
+/** Thème dont toutes les couleurs sont renseignées — ce que renvoie `getTheme()`. */
+export type ResolvedTheme = Required<ResumeTheme>;
+
 export interface Resume {
   title: string;
   facts?: string[];
@@ -78,4 +99,5 @@ export interface Resume {
   languages: ResumeLanguages[];
   projects?: ResumeProject[];
   sectionTitles?: SectionTitles;
+  theme?: ResumeTheme;
 }

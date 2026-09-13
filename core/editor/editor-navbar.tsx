@@ -67,7 +67,7 @@ export function EditorNavbar({ onPrint }: EditorNavbarProps) {
   return (
     <>
       <header className="flex-shrink-0 h-12 bg-white border-b border-gray-200 flex items-center justify-between px-4">
-        <Link href="/" className="font-raleway font-light uppercase tracking-widest text-sm text-gray-800 hover:text-gray-500 transition-colors">
+        <Link href="/" className="font-header font-light uppercase tracking-widest text-sm text-gray-800 hover:text-gray-500 transition-colors">
           CV Builder
         </Link>
 

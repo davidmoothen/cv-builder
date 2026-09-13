@@ -4,7 +4,7 @@ interface ResumeSubtitleProps {
 
 export function ResumeSubtitle({ title }: ResumeSubtitleProps) {
   return (
-    <h2 className="text-sm font-bold font-noto tracking-widest uppercase mb-4">
+    <h2 className="text-sm font-bold font-title tracking-widest uppercase mb-4">
       {title}
     </h2>
   );

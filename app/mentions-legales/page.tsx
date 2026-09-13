@@ -14,7 +14,7 @@ export default function MentionsLegalesPage() {
         <div className="max-w-2xl mx-auto flex items-center justify-between">
           <Link
             href="/"
-            className="font-raleway font-light uppercase tracking-widest text-sm text-gray-900 hover:text-gray-600 transition-colors"
+            className="font-header font-light uppercase tracking-widest text-sm text-gray-900 hover:text-gray-600 transition-colors"
           >
             ← CV Builder
           </Link>
@@ -22,7 +22,7 @@ export default function MentionsLegalesPage() {
       </header>
 
       <main className="max-w-2xl mx-auto px-6 py-12">
-        <h1 className="text-2xl font-raleway font-light uppercase tracking-widest text-gray-900 mb-10">
+        <h1 className="text-2xl font-header font-light uppercase tracking-widest text-gray-900 mb-10">
           Mentions légales
         </h1>
 
